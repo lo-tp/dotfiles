@@ -57,3 +57,7 @@ call neomake#configure#automake('rw', 1000) "auto neomake when reading a buffer 
 
 set relativenumber "turn on relative line number
 set clipboard=unnamed "use system clipboard
+
+" python support for neo vim
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
