@@ -9,6 +9,7 @@ Plug '/usr/local/opt/fzf' "Fuzz file opener
 Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
 Plug 'neomake/neomake' "Asynchronous linting and make framework for Neovim/Vim
 Plug 'benjie/local-npm-bin.vim' "Prefer local eslint over global with neomake
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Dark powered asynchronous completion framework for neovim/Vim8
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,3 +62,6 @@ set clipboard=unnamed "use system clipboard
 " python support for neo vim
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
