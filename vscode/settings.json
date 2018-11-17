@@ -1,0 +1,57 @@
+{
+  "editor.lineNumbers":"relative",
+  "git.ignoreMissingGitWarning": true,
+  "vim.leader": "<space>",
+  "vim.useCtrlKeys": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["Y"],
+            "commands": [
+                "eslint.executeAutofix"
+            ]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        },
+        {
+            "before": ["<leader>", "Z"],
+            "commands": [
+                "workbench.action.splitEditorOrthogonal"
+            ]
+        },
+        {
+            "before": ["<leader>", "z"],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": ["<leader>", "w"],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": ["<leader>", "l"],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": ["<leader>", "o"],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        }
+    ],
+    "search.quickOpen.includeHistory": false
+}
