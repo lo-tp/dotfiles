@@ -56,3 +56,4 @@ set encoding=utf-8 " set encoding
 call neomake#configure#automake('rw', 1000) "auto neomake when reading a buffer (after 1s), and when writing (no delay).
 
 set relativenumber "turn on relative line number
+set clipboard=unnamed "use system clipboard
