@@ -53,5 +53,6 @@
             ]
         }
     ],
-    "search.quickOpen.includeHistory": false
+    "search.quickOpen.includeHistory": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
