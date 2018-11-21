@@ -65,3 +65,6 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+" turn off query highlight by default
+set nohls
