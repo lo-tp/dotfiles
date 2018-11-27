@@ -10,6 +10,7 @@ Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
 Plug 'neomake/neomake' "Asynchronous linting and make framework for Neovim/Vim
 Plug 'benjie/local-npm-bin.vim' "Prefer local eslint over global with neomake
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Dark powered asynchronous completion framework for neovim/Vim8
+Plug 'Chiel92/vim-autoformat' "Code formatting
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,7 +41,11 @@ nnoremap <leader>S :wa<cr>
 "fzf
 nnoremap <leader>o :FZF <cr> 
 
+" nerd tree
 nnoremap <leader>w :NERDTree<CR> "The-Nerd-Tree
+
+" autoformat
+nnoremap Y :Autoformat<CR>
 
 "fzf
 set rtp+=/usr/local/opt/fzf
