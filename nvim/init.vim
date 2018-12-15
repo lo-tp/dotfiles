@@ -40,6 +40,7 @@ nnoremap <leader>S :wa<cr>
 
 "fzf
 nnoremap <leader>o :FZF <cr> 
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " nerd tree
 nnoremap <leader>w :NERDTree<CR> "The-Nerd-Tree
