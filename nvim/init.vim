@@ -11,6 +11,7 @@ Plug 'neomake/neomake' "Asynchronous linting and make framework for Neovim/Vim
 Plug 'benjie/local-npm-bin.vim' "Prefer local eslint over global with neomake
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Dark powered asynchronous completion framework for neovim/Vim8
 Plug 'Chiel92/vim-autoformat' "Code formatting
+Plug 'mileszs/ack.vim' " Quick Search File Content
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -74,6 +75,11 @@ let g:deoplete#enable_at_startup = 1
 
 " turn off query highlight by default
 set nohls
+
+" use ag to do file content search
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Set tab indent
