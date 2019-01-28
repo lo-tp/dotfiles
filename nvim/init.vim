@@ -12,6 +12,7 @@ Plug 'benjie/local-npm-bin.vim' "Prefer local eslint over global with neomake
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Dark powered asynchronous completion framework for neovim/Vim8
 Plug 'Chiel92/vim-autoformat' "Code formatting
 Plug 'mileszs/ack.vim' " Quick Search File Content
+Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
