@@ -19,14 +19,14 @@ call plug#end()
 " Key Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab Related
-nnoremap <C-T> :tabnew<cr> 
+nnoremap <C-T> :tabnew<cr>
 nnoremap <c-w> :q<cr>
 nnoremap <leader>h gT
 nnoremap <leader>l gt
 
 " Window Related
-nnoremap <leader>z :vsplit<cr> 
-nnoremap <leader>Z :split<cr> 
+nnoremap <leader>z :vsplit<cr>
+nnoremap <leader>Z :split<cr>
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <C-K> <C-W>k
@@ -41,11 +41,11 @@ nnoremap <leader>s :w<cr>
 nnoremap <leader>S :wa<cr>
 
 "fzf
-nnoremap <leader>o :FZF <cr> 
+nnoremap <leader>o :FZF <cr>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-" nerd tree
-nnoremap <leader>w :NERDTree<CR> "The-Nerd-Tree
+" The-Nerd-Tree
+nnoremap <leader>w :NERDTree<CR>
 
 " autoformat
 nnoremap Y :Autoformat<CR>
