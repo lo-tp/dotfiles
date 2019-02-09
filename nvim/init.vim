@@ -13,6 +13,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Dark powered asyn
 Plug 'Chiel92/vim-autoformat' "Code formatting
 Plug 'mileszs/ack.vim' " Quick Search File Content
 Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
+Plug 'natebosch/vim-lsc'  " A vim plugin for communicating with a language server, mainly for dart now
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,3 +93,8 @@ set tabstop=2
 set shiftwidth=2
 " " On pressing tab, insert 4 spaces
 set expandtab
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Add support to dart_language_server through vim lsc plugin
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
