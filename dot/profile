@@ -11,4 +11,4 @@ export NVM_DIR="$HOME/Desktop/configuration/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
-export PATH=$PATH:$HOME/Desktop/installation/flutter/bin:$HOME/.pub-cache/bin
+export PATH=$PATH:$HOME/Desktop/installation/flutter/bin:$HOME/.pub-cache/bin:/opt/apache-maven-3.6.0/bin
