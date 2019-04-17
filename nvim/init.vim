@@ -15,7 +15,6 @@ Plug 'Chiel92/vim-autoformat' "Code formatting
 Plug 'mileszs/ack.vim' " Quick Search File Content
 Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
 Plug 'natebosch/vim-lsc'  " A vim plugin for communicating with a language server, mainly for dart now
-Plug 'ruanyl/vim-fixmyjs' "auto fix your javascript using fixmyjs/eslint/tslint/jscs
 call plug#end()
 
 

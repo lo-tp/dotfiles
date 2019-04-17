@@ -1,1 +1,0 @@
-nnoremap Y :Fixmyjs<CR>
