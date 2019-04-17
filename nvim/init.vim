@@ -8,13 +8,10 @@ Plug 'vim-scripts/The-NERD-tree'
 Plug '/usr/local/opt/fzf' "Fuzz file opener
 Plug 'junegunn/fzf.vim' "fzf ❤️ vim
 Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
-Plug 'neomake/neomake' "Asynchronous linting and make framework for Neovim/Vim
-Plug 'benjie/local-npm-bin.vim' "Prefer local eslint over global with neomake
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Dark powered asynchronous completion framework for neovim/Vim8
-Plug 'Chiel92/vim-autoformat' "Code formatting
+Plug 'Chiel92/vim-autoformat' "Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'mileszs/ack.vim' " Quick Search File Content
 Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
-Plug 'natebosch/vim-lsc'  " A vim plugin for communicating with a language server, mainly for dart now
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} "Intellisense engine for vim8 & neovim
 call plug#end()
 
 
@@ -50,9 +47,6 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " The-Nerd-Tree
 nnoremap <leader>w :NERDTree<CR>
 
-" autoformat
-nnoremap Y :Autoformat<CR>
-
 "fzf
 set rtp+=/usr/local/opt/fzf
 
@@ -65,17 +59,12 @@ hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=lightgreen
 
 set encoding=utf-8 " set encoding
 
-call neomake#configure#automake('rw', 1000) "auto neomake when reading a buffer (after 1s), and when writing (no delay).
-
 set relativenumber "turn on relative line number
 set clipboard=unnamed "use system clipboard
 
 " python support for neo vim
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
 " turn off query highlight by default
 set nohls
@@ -96,7 +85,5 @@ set shiftwidth=2
 " " On pressing tab, insert 4 spaces
 set expandtab
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Add support to dart_language_server through vim lsc plugin
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lsc_server_commands = {'dart': 'dart_language_server'}
+"config for coc.vim
+source $XDG_CONFIG_HOME/nvim/config/coc.vim
