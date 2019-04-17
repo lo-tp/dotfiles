@@ -6,6 +6,7 @@ set nocompatible              " be iMproved, required
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 Plug 'vim-scripts/The-NERD-tree'
 Plug '/usr/local/opt/fzf' "Fuzz file opener
+Plug 'junegunn/fzf.vim' "fzf ❤️ vim
 Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
 Plug 'neomake/neomake' "Asynchronous linting and make framework for Neovim/Vim
 Plug 'benjie/local-npm-bin.vim' "Prefer local eslint over global with neomake
