@@ -36,6 +36,11 @@ nnoremap <F2> :res +1<cr>
 nnoremap <F7> :vertical res -1<cr>
 nnoremap <F8> :vertical res +1<cr>
 
+" Window Related
+nnoremap `h :bp<CR>
+nnoremap `l :bn<CR>
+nnoremap `b :Buffers<CR>
+
 "save file
 nnoremap <leader>s :w<cr>
 nnoremap <leader>S :wa<cr>

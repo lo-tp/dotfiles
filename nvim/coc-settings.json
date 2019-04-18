@@ -1,4 +1,5 @@
 {
+  "python.jediEnabled": false,
   "languageserver": {
     "dart": {
       "command": "dart_language_server",
