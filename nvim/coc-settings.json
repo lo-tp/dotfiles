@@ -1,4 +1,7 @@
 {
+  "python.linting.pylintEnabled": true,
+  "python.linting.pep8Enabled": false,
+  "python.linting.pylintUseMinimalCheckers": false,
   "python.jediEnabled": false,
   "languageserver": {
     "dart": {
@@ -7,13 +10,7 @@
       "filetypes": [
         "dart"
       ],
-      "initializationOptions": {},
-      "settings": {
-        "dart": {
-          "validation": {},
-          "completion": {}
-        }
-      }
+      "initializationOptions": {}
     }
   }
 }
