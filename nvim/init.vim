@@ -93,3 +93,12 @@ source $XDG_CONFIG_HOME/nvim/config/coc.vim
 "choosewin
 nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
+
+let g:choosewin_color_overlay = {
+      \ 'gui': ['DodgerBlue3', 'DodgerBlue3'],
+      \ 'cterm': [105, 105]
+      \ }
+let g:choosewin_color_overlay_current = {
+      \ 'gui': ['firebrick1', 'firebrick1'],
+      \ 'cterm': [124, 124]
+      \ }
