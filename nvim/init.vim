@@ -12,6 +12,7 @@ Plug 'Chiel92/vim-autoformat' "Provide easy code formatting in Vim by integratin
 Plug 'mileszs/ack.vim' " Quick Search File Content
 Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} "Intellisense engine for vim8 & neovim
+Plug 't9md/vim-choosewin' "Land on window you chose like tmux's 'display-pane'
 call plug#end()
 
 
@@ -27,10 +28,6 @@ nnoremap <leader>l gt
 " Window Related
 nnoremap <leader>z :vsplit<cr>
 nnoremap <leader>Z :split<cr>
-nnoremap <C-H> <C-W>h
-nnoremap <C-L> <C-W>l
-nnoremap <C-K> <C-W>k
-nnoremap <C-J> <C-W>j
 nnoremap <F1> :res -1<cr>
 nnoremap <F2> :res +1<cr>
 nnoremap <F7> :vertical res -1<cr>
@@ -92,3 +89,7 @@ set expandtab
 
 "config for coc.vim
 source $XDG_CONFIG_HOME/nvim/config/coc.vim
+
+"choosewin
+nmap  -  <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
