@@ -8,3 +8,5 @@ nvim/plugged
 tmux/plugins
 vscode/extensions
 vscode/workspaceStorage
+gatsby/
+karabiner/automatic_backups/
