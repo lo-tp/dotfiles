@@ -13,7 +13,13 @@ Plug 'mileszs/ack.vim' " Quick Search File Content
 Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} "Intellisense engine for vim8 & neovim
 Plug 't9md/vim-choosewin' "Land on window you chose like tmux's 'display-pane'
+Plug 'gcmt/taboo.vim' "Few utilities for pretty tabs
 call plug#end()
+
+" Tabline Config
+hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineFill  ctermfg=None  ctermbg=None     cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,3 +108,9 @@ let g:choosewin_color_overlay_current = {
       \ 'gui': ['firebrick1', 'firebrick1'],
       \ 'cterm': [124, 124]
       \ }
+let g:choosewin_tabline_replace = 0
+let g:choosewin_blink_on_land= 0
+
+"taboo
+let g:taboo_tab_format='  %N: %P  |'
+set sessionoptions+=tabpages,globals
