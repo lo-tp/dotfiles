@@ -30,6 +30,10 @@ nnoremap <C-T> :tabnew<cr>
 nnoremap <c-w> :q<cr>
 
 " Window Related
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
 nnoremap <leader>z :vsplit<cr>
 nnoremap <leader>Z :split<cr>
 nnoremap <F1> :res -1<cr>
