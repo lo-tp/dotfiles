@@ -28,8 +28,6 @@ hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 " Tab Related
 nnoremap <C-T> :tabnew<cr>
 nnoremap <c-w> :q<cr>
-nnoremap <leader>h gT
-nnoremap <leader>l gt
 
 " Window Related
 nnoremap <leader>z :vsplit<cr>
