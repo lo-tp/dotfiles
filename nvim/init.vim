@@ -18,7 +18,7 @@ call plug#end()
 
 " Tabline Config
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineFill  ctermfg=None  ctermbg=None     cterm=NONE
+hi TabLineFill  ctermfg=None   ctermbg=White     cterm=NONE
 hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 
