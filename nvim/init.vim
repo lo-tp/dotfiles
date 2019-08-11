@@ -58,6 +58,9 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " The-Nerd-Tree
 nnoremap <leader>w :NERDTree<CR>
 
+"coc-list outline
+nnoremap <leader>r :CocList outline<cr>
+
 "fzf
 set rtp+=/usr/local/opt/fzf
 
