@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} "Intellisense engine for vim8 & neovim
 Plug 't9md/vim-choosewin' "Land on window you chose like tmux's 'display-pane'
 Plug 'gcmt/taboo.vim' "Few utilities for pretty tabs
+Plug 'lo-tp/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 call plug#end()
 
 " Tabline Config
