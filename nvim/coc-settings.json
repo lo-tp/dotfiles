@@ -1,8 +1,10 @@
 {
-  "python.linting.pylintEnabled": true,
+  "python.pythonPath":"/usr/local/opt/python@2/bin/python2.7",
+  "python.linting.pylintEnabled": false,
   "python.linting.pep8Enabled": false,
   "python.linting.pylintUseMinimalCheckers": false,
   "python.jediEnabled": false,
+  "java.jdt.ls.vmargs": "-javaagent:/Users/lotp/Desktop/configuration/framework/java/lombok.jar -Xbootclasspath/a:/Users/lotp/configuration/framework/java/lombok.jar",
   "languageserver": {
     "dart": {
       "command": "dart_language_server",
