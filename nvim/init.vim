@@ -120,3 +120,5 @@ let g:choosewin_blink_on_land= 0
 "taboo
 let g:taboo_tab_format='  %N: %P  |'
 set sessionoptions+=tabpages,globals
+
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
