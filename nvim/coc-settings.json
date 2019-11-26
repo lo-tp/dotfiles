@@ -6,6 +6,10 @@
   "python.jediEnabled": false,
   "java.jdt.ls.vmargs": "-javaagent:/Users/lotp/Desktop/configuration/framework/java/lombok.jar -Xbootclasspath/a:/Users/lotp/configuration/framework/java/lombok.jar",
   "languageserver": {
+    "kotlin": {
+        "command": "/Users/lotp/Desktop/configuration/framework/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
+        "filetypes": ["kotlin"]
+    },
     "dart": {
       "command": "dart_language_server",
       "args": [],
