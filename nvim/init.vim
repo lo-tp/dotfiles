@@ -61,6 +61,11 @@ nnoremap <leader>w :NERDTree<CR>
 "coc-list outline
 nnoremap <leader>r :CocList outline<cr>
 
+"save session to $VIM_SESSION if this env veriable exists
+if !empty($VIM_SESSION)
+  nnoremap s :mks! $VIM_SESSION <cr>
+endif
+
 "fzf
 set rtp+=/usr/local/opt/fzf
 
@@ -70,6 +75,7 @@ hi Visual cterm=NONE ctermbg=green ctermfg=red
 " cucor and curlor line related stuff
 set cul
 hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=lightgreen
+
 
 set encoding=utf-8 " set encoding
 
