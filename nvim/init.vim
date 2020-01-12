@@ -47,6 +47,9 @@ nnoremap <leader>H :bp<CR>
 nnoremap <leader>L :bn<CR>
 nnoremap <leader>O :Buffers<CR>
 
+"macro
+nnoremap  Q @
+
 "save file
 nnoremap <leader>s :w<cr>
 nnoremap <leader>S :wa<cr>
