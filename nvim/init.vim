@@ -15,7 +15,14 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} "Intellisense engine 
 Plug 't9md/vim-choosewin' "Land on window you chose like tmux's 'display-pane'
 Plug 'gcmt/taboo.vim' "Few utilities for pretty tabs
 Plug 'junegunn/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
+Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 call plug#end()
+
+" ultisnips config
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 " Tabline Config
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
