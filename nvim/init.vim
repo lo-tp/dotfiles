@@ -85,6 +85,8 @@ hi Visual cterm=NONE ctermbg=green ctermfg=red
 " cucor and curlor line related stuff
 set cul
 hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=lightgreen
+autocmd InsertEnter * set cursorcolumn
+autocmd InsertLeave * set nocursorcolumn
 
 
 set encoding=utf-8 " set encoding
