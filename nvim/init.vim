@@ -139,4 +139,9 @@ let g:choosewin_blink_on_land= 0
 let g:taboo_tab_format='  %N: %P  |'
 set sessionoptions+=tabpages,globals
 
+"typescript settings
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+
+"list char settings
+set list
+set listchars=eol:⏎
