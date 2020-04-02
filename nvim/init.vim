@@ -16,6 +16,7 @@ Plug 't9md/vim-choosewin' "Land on window you chose like tmux's 'display-pane'
 Plug 'gcmt/taboo.vim' "Few utilities for pretty tabs
 Plug 'junegunn/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
+Plug 'ap/vim-css-color' "Preview colours in source code while editing
 call plug#end()
 
 " ultisnips config
