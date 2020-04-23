@@ -43,3 +43,6 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+#ruby config
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
