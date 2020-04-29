@@ -1,0 +1,21 @@
+set visualbell
+set noerrorbells
+let mapleader = " "
+
+noremap <leader>gd :action GotoDeclaration<cr>
+nnoremap ]c :action GotoNextError<CR>
+nnoremap [c :action GotoPreviousError<CR>
+nnoremap Y :action ReformatCode<CR>
+
+" Window Related
+noremap <leader>o :action GotoFile<cr>
+noremap <c-w> :q<cr>
+noremap <leader>z :vsplit<cr>
+noremap <leader>Z :split<cr>
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
+
+"save file
+nnoremap <leader>s :w<cr>
