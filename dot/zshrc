@@ -24,14 +24,14 @@ export KEYTIMEOUT=1
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
 
-export XDG_CONFIG_HOME=~/Desktop/.config
+export XDG_CONFIG_HOME=~/.config
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 
 
 alias tmux='TERM=xterm-256color tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 alias vim="nvim"
 
-export NVM_DIR="$HOME/Desktop/configuration/nvm"
+export NVM_DIR="~/.config/nvm"
 
 # for flutter
 export PATH="$PATH:$XDG_CONFIG_HOME/framework/flutter/bin":"$HOME/.pub-cache/bin"
