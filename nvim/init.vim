@@ -4,6 +4,7 @@ let mapleader = " " "set leader key
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
+Plug 'vim-scripts/The-NERD-tree'
 Plug '/usr/local/opt/fzf' "Fuzz file opener
 Plug 'junegunn/fzf.vim' "fzf ❤️ vim
 Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
@@ -16,7 +17,6 @@ Plug 'gcmt/taboo.vim' "Few utilities for pretty tabs
 Plug 'junegunn/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 Plug 'ap/vim-css-color' "Preview colours in source code while editing
-Plug 'mcchrish/nnn.vim' "File manager in vim/neovim powered by nnn
 call plug#end()
 
 " ultisnips config
@@ -66,8 +66,8 @@ nnoremap <leader>S :wa<cr>
 nnoremap <leader>o :FZF <cr>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-" nnn.vim
-nnoremap <leader>w :NnnPicker<CR>
+" The-Nerd-Tree
+nnoremap <leader>w :NERDTree<CR>
 
 "coc-list outline
 nnoremap <leader>r :CocList outline<cr>
