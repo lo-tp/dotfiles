@@ -11,3 +11,5 @@ vscode/workspaceStorage
 gatsby/
 karabiner/automatic_backups/
 nvim/session/
+nvim/.netrwhist
+nvim/UltiSnips/kotlin.snippets
