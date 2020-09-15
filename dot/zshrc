@@ -31,7 +31,6 @@ export NVM_DIR=$XDG_CONFIG_HOME/nvm
 alias tmux='TERM=xterm-256color tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 alias vim="nvim"
 
-export NVM_DIR="~/.config/nvm"
 
 # for flutter
 export PATH="$PATH:$XDG_CONFIG_HOME/framework/flutter/bin":"$HOME/.pub-cache/bin"
