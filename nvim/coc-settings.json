@@ -4,10 +4,10 @@
   "python.linting.pep8Enabled": false,
   "python.linting.pylintUseMinimalCheckers": false,
   "python.jediEnabled": false,
-  "java.jdt.ls.vmargs": "-javaagent:/Users/lotp/Desktop/configuration/framework/java/lombok.jar -Xbootclasspath/a:/Users/lotp/configuration/framework/java/lombok.jar",
+  "java.jdt.ls.vmargs": "-javaagent:/Users/lotp/.config/framework/java/lombok.jar -Xbootclasspath/a:/Users/lotp/.config/framework/java/lombok.jar",
   "languageserver": {
     "kotlin": {
-        "command": "/Users/lotp/Desktop/configuration/framework/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
+        "command": "/Users/lotp/.config/framework/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
         "filetypes": ["kotlin"]
     },
     "dart": {
