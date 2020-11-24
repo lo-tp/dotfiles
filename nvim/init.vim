@@ -17,6 +17,7 @@ Plug 'gcmt/taboo.vim' "Few utilities for pretty tabs
 Plug 'junegunn/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 Plug 'ap/vim-css-color' "Preview colours in source code while editing
+Plug 'Asheq/close-buffers.vim' "Bdelete several buffers at once
 call plug#end()
 
 " ultisnips config
@@ -54,6 +55,7 @@ nnoremap <F8> :vertical res +1<cr>
 nnoremap <leader>H :bp<CR>
 nnoremap <leader>L :bn<CR>
 nnoremap <leader>O :Buffers<CR>
+nnoremap <leader>D :Bdelete hidden<CR> "bdelete buffers not visible in a window
 
 "macro
 nnoremap  Q @
