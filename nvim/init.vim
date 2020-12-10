@@ -55,7 +55,8 @@ nnoremap <F8> :vertical res +1<cr>
 nnoremap <leader>H :bp<CR>
 nnoremap <leader>L :bn<CR>
 nnoremap <leader>O :Buffers<CR>
-nnoremap <leader><BS> :Bdelete hidden<CR> "bdelete buffers not visible in a window
+"bdelete buffers not visible in a window
+nnoremap <leader><BS> :Bdelete hidden<CR>
 
 "macro
 nnoremap  Q @
