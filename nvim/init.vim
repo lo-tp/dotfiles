@@ -18,6 +18,7 @@ Plug 'junegunn/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-
 Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 Plug 'ap/vim-css-color' "Preview colours in source code while editing
 Plug 'Asheq/close-buffers.vim' "Bdelete several buffers at once
+Plug 'mattn/emmet-vim' 
 call plug#end()
 
 " ultisnips config
