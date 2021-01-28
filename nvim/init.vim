@@ -96,6 +96,7 @@ autocmd InsertLeave * set nocursorcolumn
 
 set encoding=utf-8 " set encoding
 
+set number "turn line number
 set relativenumber "turn on relative line number
 set clipboard=unnamed "use system clipboard
 
