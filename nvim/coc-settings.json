@@ -15,5 +15,5 @@
     }
   },
   "tsserver.log": "verbose",
-  "tsserver.npm": "/usr/bin/npm"
+  "tsserver.npm": "/Users/lotp/.config/nvm/versions/node/v12.14.0/bin/npm"
 }
