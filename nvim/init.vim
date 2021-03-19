@@ -19,6 +19,8 @@ Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull reques
 Plug 'ap/vim-css-color' "Preview colours in source code while editing
 Plug 'Asheq/close-buffers.vim' "Bdelete several buffers at once
 Plug 'mattn/emmet-vim' 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " ultisnips config
@@ -151,3 +153,5 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 "list char settings
 set list
 set listchars=eol:⏎
+
+let g:airline_theme='angr'
