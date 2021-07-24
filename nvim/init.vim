@@ -7,6 +7,7 @@ call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 Plug 'vim-scripts/The-NERD-tree'
 Plug '/usr/local/opt/fzf' "Fuzz file opener
 Plug 'junegunn/fzf.vim' "fzf ❤️ vim
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' } "The plugin that powerfully integrates fzf and (Neo)vim. It is also possible to integrate with coc.nvim.
 Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
 Plug 'Chiel92/vim-autoformat' "Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'mileszs/ack.vim' " Quick Search File Content
@@ -57,7 +58,7 @@ nnoremap <F8> :vertical res +1<cr>
 " Buffer Related
 nnoremap <leader>H :bp<CR>
 nnoremap <leader>L :bn<CR>
-nnoremap <leader>O :Buffers<CR>
+nnoremap <leader>O :FzfPreviewBuffers<CR>
 "bdelete buffers not visible in a window
 nnoremap <leader><BS> :Bdelete hidden<CR>
 
@@ -69,7 +70,8 @@ nnoremap <leader>s :w<cr>
 nnoremap <leader>S :wa<cr>
 
 "fzf
-nnoremap <leader>o :FZF <cr>
+nnoremap <leader>o :FzfPreviewProjectFiles<cr>
+nnoremap <leader>l :FzfPreviewLines<cr>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " The-Nerd-Tree
