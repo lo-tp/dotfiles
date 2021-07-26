@@ -19,6 +19,7 @@ Plug 'junegunn/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-
 Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 Plug 'ap/vim-css-color' "Preview colours in source code while editing
 Plug 'Asheq/close-buffers.vim' "Bdelete several buffers at once
+Plug 'MattesGroeger/vim-bookmarks' "Bookmarks Manager
 Plug 'mattn/emmet-vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -72,6 +73,7 @@ nnoremap <leader>S :wa<cr>
 "fzf
 nnoremap <leader>o :FzfPreviewProjectFiles<cr>
 nnoremap <leader>l :FzfPreviewLines<cr>
+nnoremap <leader>m :FzfPreviewBookmarks<cr>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " The-Nerd-Tree
@@ -164,3 +166,8 @@ if !isdirectory("/tmp/.vim-undo-dir")
 endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
+
+"vim-bookmarks
+let g:bookmark_auto_save = 1
+let g:bookmark_auto_save_file = $XDG_CONFIG_HOME.'/nvim/bookmarks'
+let g:bookmark_auto_close = 1
