@@ -157,3 +157,10 @@ set list
 set listchars=eol:⏎
 
 let g:airline_theme='angr'
+
+" Use persistent history.
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
