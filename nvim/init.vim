@@ -20,6 +20,7 @@ Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull reques
 Plug 'ap/vim-css-color' "Preview colours in source code while editing
 Plug 'Asheq/close-buffers.vim' "Bdelete several buffers at once
 Plug 'MattesGroeger/vim-bookmarks' "Bookmarks Manager
+Plug 'simnalamburt/vim-mundo' "Undo tree visualizer
 Plug 'mattn/emmet-vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -171,3 +172,7 @@ set undofile
 let g:bookmark_auto_save = 1
 let g:bookmark_auto_save_file = $XDG_CONFIG_HOME.'/nvim/bookmarks'
 let g:bookmark_auto_close = 1
+
+"mundo
+nnoremap U :MundoToggle<CR>
+let g:mundo_preview_bottom=1
