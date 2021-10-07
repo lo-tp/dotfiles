@@ -4,6 +4,7 @@ let mapleader = " " "set leader key
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
+Plug 'neovim/nvim-lspconfig' "A collection of common configurations for Neovim's built-in language server client
 Plug 'vim-scripts/The-NERD-tree'
 Plug '/usr/local/opt/fzf' "Fuzz file opener
 Plug 'junegunn/fzf.vim' "fzf ❤️ vim
@@ -176,3 +177,4 @@ let g:bookmark_auto_close = 1
 "mundo
 nnoremap U :MundoToggle<CR>
 let g:mundo_preview_bottom=1
+
