@@ -25,7 +25,11 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main'} "A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
+
+
 
 
 " ultisnips config
@@ -62,7 +66,7 @@ nnoremap <F8> :vertical res +1<cr>
 " Buffer Related
 nnoremap <leader>H :bp<CR>
 nnoremap <leader>L :bn<CR>
-nnoremap <leader>O :FzfPreviewBuffers<CR>
+nnoremap <leader>O <cmd>Telescope buffers<CR>
 "bdelete buffers not visible in a window
 nnoremap <leader><BS> :Bdelete hidden<CR>
 
@@ -74,7 +78,7 @@ nnoremap <leader>s :w<cr>
 nnoremap <leader>S :wa<cr>
 
 "fzf
-nnoremap <leader>o :FzfPreviewProjectFiles<cr>
+nnoremap <leader>o <cmd>Telescope find_files<cr>
 nnoremap <leader>l :FzfPreviewLines<cr>
 nnoremap <leader>m :FzfPreviewBookmarks<cr>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
