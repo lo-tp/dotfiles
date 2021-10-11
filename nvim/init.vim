@@ -26,7 +26,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main'} "A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim' "Gaze deeply into unknown regions using the power of the moon.
+Plug 'nvim-telescope/telescope-fzf-native.nvim', {'branch': 'main', 'do': 'make' } "fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
 call plug#end()
 
 
@@ -267,4 +268,32 @@ lua << EOF
     }
   end
 
+EOF
+
+lua << EOF
+  require('telescope').setup {
+        defaults = {
+        file_sorter = require "telescope.sorters".get_fzy_sorter,
+        generic_sorter = require "telescope.sorters".get_fzy_sorter,
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden"
+        },
+        file_ignore_patterns = {
+            "node_modules",
+            ".work/.*",
+            ".cache/.*",
+            ".idea/.*",
+            "dist/.*",
+            ".git/.*"
+        },
+        },
+  }
+  require('telescope').load_extension('fzf')
 EOF
