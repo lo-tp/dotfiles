@@ -6,9 +6,6 @@ set nocompatible              " be iMproved, required
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 Plug 'neovim/nvim-lspconfig' "A collection of common configurations for Neovim's built-in language server client
 Plug 'vim-scripts/The-NERD-tree'
-Plug '/usr/local/opt/fzf' "Fuzz file opener
-Plug 'junegunn/fzf.vim' "fzf ❤️ vim
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' } "The plugin that powerfully integrates fzf and (Neo)vim. It is also possible to integrate with coc.nvim.
 Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
 Plug 'Chiel92/vim-autoformat' "Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'mileszs/ack.vim' " Quick Search File Content
@@ -16,11 +13,8 @@ Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
 Plug 't9md/vim-choosewin' "Land on window you chose like tmux's 'display-pane'
 Plug 'gcmt/taboo.vim' "Few utilities for pretty tabs
 Plug 'junegunn/vim-peekaboo' "Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
-Plug 'SirVer/ultisnips' "The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
 Plug 'ap/vim-css-color' "Preview colours in source code while editing
 Plug 'Asheq/close-buffers.vim' "Bdelete several buffers at once
-Plug 'MattesGroeger/vim-bookmarks' "Bookmarks Manager
-Plug 'simnalamburt/vim-mundo' "Undo tree visualizer
 Plug 'mattn/emmet-vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -32,14 +26,6 @@ Plug 'hrsh7th/nvim-cmp', { 'branch': 'main'} "Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main'} "LSP source for nvim-cmp
 call plug#end()
 
-
-
-
-" ultisnips config
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 
 " Tabline Config
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
@@ -80,11 +66,8 @@ nnoremap  Q @
 nnoremap <leader>s :w<cr>
 nnoremap <leader>S :wa<cr>
 
-"fzf
+"Telescope Find
 nnoremap <leader>o <cmd>Telescope find_files<cr>
-nnoremap <leader>l :FzfPreviewLines<cr>
-nnoremap <leader>m :FzfPreviewBookmarks<cr>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " The-Nerd-Tree
 nnoremap <leader>w :NERDTree<CR>
@@ -94,8 +77,6 @@ if !empty($VIM_SESSION)
   nnoremap s :mks! $VIM_SESSION <cr>
 endif
 
-"fzf
-set rtp+=/usr/local/opt/fzf
 
 "set visual mode selected color
 hi Visual cterm=NONE ctermbg=green ctermfg=red
@@ -170,15 +151,6 @@ if !isdirectory("/tmp/.vim-undo-dir")
 endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
-
-"vim-bookmarks
-let g:bookmark_auto_save = 1
-let g:bookmark_auto_save_file = $XDG_CONFIG_HOME.'/nvim/bookmarks'
-let g:bookmark_auto_close = 1
-
-"mundo
-nnoremap U :MundoToggle<CR>
-let g:mundo_preview_bottom=1
 
 lua << EOF
   local nvim_lsp = require('lspconfig')
