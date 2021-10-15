@@ -86,7 +86,6 @@ set undofile
 
 lua << EOF
   local nvim_lsp = require('lspconfig')
-  local nvim_lsp = require('lspconfig')
   nvim_lsp.tsserver.setup {
     on_attach = on_attach,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
@@ -129,7 +128,7 @@ lua << EOF
   end
 
   nvim_lsp.diagnosticls.setup{
-  on_attach=custom_attach,
+  on_attach=on_attach,
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'  },
   init_options = {
     linters = {
