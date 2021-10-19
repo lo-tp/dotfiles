@@ -40,41 +40,44 @@ local on_attach = function(client, bufnr)
 
 end
 
-nvim_lsp.diagnosticls.setup{
-on_attach=on_attach,
-filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'  },
-init_options = {
-  linters = {
-    eslint = {
-      command = 'eslint_d',
-      rootPatterns = { '.git' },
-      debounce = 100,
-      args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-      sourceName = 'eslint',
-      parseJson = {
-        errorsRoot = '[0].messages',
-        line = 'line',
-        column = 'column',
-        endLine = 'endLine',
-        endColumn = 'endColumn',
-        message = '[eslint] ${message} [${ruleId}]',
-        security = 'severity'
-      },
-      securities = {
-        [2] = 'error',
-        [1] = 'warning'
-      }
+local linters = {
+  eslint = {
+    command = 'eslint_d',
+    rootPatterns = { '.git' },
+    debounce = 100,
+    args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+    sourceName = 'eslint',
+    parseJson = {
+      errorsRoot = '[0].messages',
+      line = 'line',
+      column = 'column',
+      endLine = 'endLine',
+      endColumn = 'endColumn',
+      message = '[eslint] ${message} [${ruleId}]',
+      security = 'severity'
     },
-  },
-    filetypes = {
-    javascript = 'eslint',
-    javascriptreact = 'eslint',
-    typescript = 'eslint',
-    typescriptreact = 'eslint',
+    securities = {
+      [2] = 'error',
+      [1] = 'warning'
     }
-  }
+  },
+} 
+
+local filetypes = {
+  javascript = 'eslint',
+  javascriptreact = 'eslint',
+  typescript = 'eslint',
+  typescriptreact = 'eslint',
 }
 
+nvim_lsp.diagnosticls.setup{
+  on_attach=on_attach,
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'  },
+  init_options = {
+    linters = linters,
+    filetypes = filetypes
+    }
+}
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
