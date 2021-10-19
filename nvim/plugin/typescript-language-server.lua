@@ -1,8 +1,3 @@
-local nvim_lsp = require('lspconfig')
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
-}
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
@@ -17,6 +12,8 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
+
+  vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -40,54 +37,12 @@ local on_attach = function(client, bufnr)
 
 end
 
-local linters = {
-  eslint = {
-    command = 'eslint_d',
-    rootPatterns = { '.git' },
-    debounce = 100,
-    args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-    sourceName = 'eslint',
-    parseJson = {
-      errorsRoot = '[0].messages',
-      line = 'line',
-      column = 'column',
-      endLine = 'endLine',
-      endColumn = 'endColumn',
-      message = '[eslint] ${message} [${ruleId}]',
-      security = 'severity'
-    },
-    securities = {
-      [2] = 'error',
-      [1] = 'warning'
-    }
-  },
-} 
-
-local filetypes = {
-  javascript = 'eslint',
-  javascriptreact = 'eslint',
-  typescript = 'eslint',
-  typescriptreact = 'eslint',
+local nvim_lsp = require('lspconfig')
+nvim_lsp.tsserver.setup {
+  on_attach = function(client)
+    on_attach(client)
+    client.resolved_capabilities.document_formatting = false
+  end,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
 }
 
-nvim_lsp.diagnosticls.setup{
-  on_attach=on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'  },
-  init_options = {
-    linters = linters,
-    filetypes = filetypes
-    }
-}
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
