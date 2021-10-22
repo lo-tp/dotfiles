@@ -1,7 +1,6 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 Plug 'neovim/nvim-lspconfig' "A collection of common configurations for Neovim's built-in language server client
 Plug 'vim-scripts/The-NERD-tree'
-Plug 'sheerun/vim-polyglot' "A collection of language packs for Vim.
 Plug 'Chiel92/vim-autoformat' "Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'mileszs/ack.vim' " Quick Search File Content
 Plug 'scrooloose/nerdcommenter'  " Vim plugin for intensely orgasmic commenting
