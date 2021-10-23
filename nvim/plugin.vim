@@ -18,5 +18,5 @@ Plug 'nvim-telescope/telescope.nvim' "Gaze deeply into unknown regions using the
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'branch': 'main', 'do': 'make' } "fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
 Plug 'hrsh7th/nvim-cmp', { 'branch': 'main'} "Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main'} "LSP source for nvim-cmp
-Plug 'mhartington/formatter.nvim'
+Plug 'mhartington/formatter.nvim' "A format runner for neovim, written in lua.
 call plug#end()
