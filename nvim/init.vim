@@ -84,4 +84,8 @@ endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
 
+" config for indentation display
+let g:indentLine_color_term = 47
+let g:indentLine_char = '┆'
+
 runtime ./keymapping.vim
