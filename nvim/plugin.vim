@@ -20,4 +20,5 @@ Plug 'hrsh7th/nvim-cmp', { 'branch': 'main'} "Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main'} "LSP source for nvim-cmp
 Plug 'mhartington/formatter.nvim' "A format runner for neovim, written in lua.
 Plug 'Yggdroot/indentLine' "Displaying thin vertical lines at each indentation level for code indented with spaces
+Plug 'morhetz/gruvbox' "A bright theme with pastel 'retro groove' colors
 call plug#end()
