@@ -43,3 +43,6 @@ endif
 
 "choosewin
 nmap  -  <Plug>(choosewin)
+
+"vista.vim
+nnoremap <leader>p :Vista nvim_lsp<cr>
