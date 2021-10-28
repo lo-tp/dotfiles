@@ -6,11 +6,6 @@ set nocompatible              " be iMproved, required
 runtime ./plugin.vim
 
 
-" Tabline Config
-hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineFill  ctermfg=None   ctermbg=White     cterm=NONE
-hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
-
 " Color related config
 if (empty($TMUX))
   if (has("nvim"))
@@ -31,6 +26,11 @@ highlight Normal  ctermbg=239
 highlight clear LineNr
 highlight CursorLineNr ctermbg=243 
 highlight CursorLine cterm=NONE ctermbg=243 ctermfg=lightgreen
+
+" Tabline Config
+hi TabLine      ctermfg=White  ctermbg=239     cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
+
 
 
 "set visual mode selected color
