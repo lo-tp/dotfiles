@@ -18,6 +18,7 @@ Plug 'nvim-telescope/telescope.nvim' "Gaze deeply into unknown regions using the
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'branch': 'main', 'do': 'make' } "fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
 Plug 'hrsh7th/nvim-cmp', { 'branch': 'main'} "Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main'} "LSP source for nvim-cmp
+Plug 'hrsh7th/cmp-buffer', { 'branch': 'main'} "nvim-cmp source for buffer words
 Plug 'mhartington/formatter.nvim' "A format runner for neovim, written in lua.
 Plug 'Yggdroot/indentLine' "Displaying thin vertical lines at each indentation level for code indented with spaces
 Plug 'morhetz/gruvbox' "A bright theme with pastel 'retro groove' colors
