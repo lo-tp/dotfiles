@@ -19,6 +19,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', {'branch': 'main', 'do': 'make'
 Plug 'hrsh7th/nvim-cmp', { 'branch': 'main'} "Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main'} "LSP source for nvim-cmp
 Plug 'hrsh7th/cmp-buffer', { 'branch': 'main'} "nvim-cmp source for buffer words
+Plug 'hrsh7th/cmp-vsnip', { 'branch': 'main'}
+Plug 'hrsh7th/vim-vsnip'
 Plug 'mhartington/formatter.nvim' "A format runner for neovim, written in lua.
 Plug 'Yggdroot/indentLine' "Displaying thin vertical lines at each indentation level for code indented with spaces
 Plug 'morhetz/gruvbox' "A bright theme with pastel 'retro groove' colors
