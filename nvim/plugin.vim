@@ -12,7 +12,7 @@ Plug 'Asheq/close-buffers.vim' "Bdelete several buffers at once
 Plug 'mattn/emmet-vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'glepnir/lspsaga.nvim', { 'branch': 'main'} "A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI
+Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0'} "Lspsaga is light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim' "Gaze deeply into unknown regions using the power of the moon.
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'branch': 'main', 'do': 'make' } "fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
@@ -25,4 +25,5 @@ Plug 'mhartington/formatter.nvim' "A format runner for neovim, written in lua.
 Plug 'Yggdroot/indentLine' "Displaying thin vertical lines at each indentation level for code indented with spaces
 Plug 'morhetz/gruvbox' "A bright theme with pastel 'retro groove' colors
 Plug 'liuchengxu/vista.vim' "View and search LSP symbols, tags in Vim/NeoVim.
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Nvim Treesitter configurations and abstraction layer
 call plug#end()
