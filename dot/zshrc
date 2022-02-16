@@ -49,3 +49,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export HOMEBREW_NO_CLEANUP_FORMULAE="nvim"
+
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
