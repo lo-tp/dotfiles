@@ -27,6 +27,18 @@ require("formatter").setup(
       html = {
         htmlFormat
       },
+      python = {
+      function()
+        return {
+          exe = "python -m autopep8",
+          args = {
+            "--in-place --aggressive --aggressive",
+            vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+          },
+          stdin = false
+        }
+      end
+      },
     }
   }
 )
