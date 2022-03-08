@@ -52,3 +52,6 @@ export HOMEBREW_NO_CLEANUP_FORMULAE="nvim"
 
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
+
+# Created by `pipx` on 2022-02-03 09:25:05
+export PATH="$PATH:/Users/lotp/.local/bin"
