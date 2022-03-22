@@ -1,6 +1,6 @@
-vim.api.nvim_set_keymap(
+require('lib.mapping').map(
   "n",
   "Y",
   ":Format<cr>",
   { noremap = true }
- )
+)

@@ -5,3 +5,4 @@ vim.api.nvim_set_keymap(
   ":Format<cr>",
   { noremap = true }
  )
+
