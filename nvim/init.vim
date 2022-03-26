@@ -108,4 +108,6 @@ set undofile
 let g:indentLine_color_term = 47
 let g:indentLine_char = '┆'
 
-runtime ./keymapping.vim
+lua << EOF
+  require('keymapping')
+EOF
