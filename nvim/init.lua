@@ -5,100 +5,146 @@ vim.opt.compatible=false
 vim.api.nvim_command([[
   runtime ./plugin.vim
 ]])
--- set encoding
-vim.opt.encoding='utf-8' 
---turn line number
-vim.opt.number=true 
---turn on relative line number
-vim.opt.relativenumber=true 
---use system clipboard
-vim.opt.clipboard='unnamed' 
 
-
--- python support for neo vim
-vim.g.python_host_prog = '/usr/local/bin/python2'
-vim.g.python3_host_prog = '/usr/local/bin/python3'
-
--- turn off query highlight by default
-vim.opt.hls=false
-
--- use ag to do file content search
-if vim.fn.executable('ag') then
-  vim.g.ackprg = 'ag --vimgrep'
+function configEncoding()
+  vim.opt.encoding='utf-8' 
 end
 
--- config for indentation display
-vim.g.indentLine_color_term = 47
-vim.g.indentLine_char = '┆'
+function configLineNumber()
+  --turn line number
+  vim.opt.number=true 
+  --turn on relative line number
+  vim.opt.relativenumber=true 
+end
 
--- Use persistent history.
-os.execute("mkdir /tmp/.vim-undo-dir")
-vim.opt.undodir="/tmp/.vim-undo-dir"
-vim.opt.undofile=true
+function configClipboard()
+  --use system clipboard
+  vim.opt.clipboard='unnamed' 
+end
 
--- list char settings
-vim.opt.list=true
-vim.opt.listchars='eol:⏎'
+function configPythonPath()
+  -- python support for neo vim
+  vim.g.python_host_prog = '/usr/local/bin/python2'
+  vim.g.python3_host_prog = '/usr/local/bin/python3'
+end
 
--- airline theme config
-vim.g.airline_theme='angr'
+function configQueryHighlight()
+  -- turn off query highlight by default
+  vim.opt.hls=false
+end
 
--- taboo
-vim.g.taboo_tab_format='  %N: %P  |'
+function configAckPlugin()
+  -- use ag to do file content search
+  if vim.fn.executable('ag') then
+    vim.g.ackprg = 'ag --vimgrep'
+  end
+end
 
--- tab relevant config
--- show existing tab with 4 spaces width
-vim.opt.tabstop=2
--- when indenting with '>', use 4 spaces width
-vim.opt.shiftwidth=2
--- On pressing tab, insert 4 spaces
-vim.opt.expandtab=true
+function configIndentLinePlugin()
+  vim.g.indentLine_color_term = 47
+  vim.g.indentLine_char = '┆'
+end
 
+function configPersistentEditingHistory()
+  os.execute("mkdir /tmp/.vim-undo-dir")
+  vim.opt.undodir="/tmp/.vim-undo-dir"
+  vim.opt.undofile=true
+end
 
--- vim-choosewin plugin config
-vim.g.choosewin_overlay_enable = 1
-vim.g.choosewin_color_overlay = {
-  gui= {'DodgerBlue3', 'DodgerBlue3'},
-  cterm= {105, 105}
-}
-vim.g.choosewin_color_overlay_current = {
-  gui= {'firebrick1', 'firebrick1'},
-  cterm={124, 124}
-}
-vim.g.choosewin_tabline_replace = 0
-vim.g.choosewin_blink_on_land= 0
+function configListChar()
+  vim.opt.list=true
+  --use ⏎ to show end of line in the cursor line
+  vim.opt.listchars={eol='⏎'}
+end
 
--- show vertical cursor line in editing mode
-vim.opt.cul=true
-vim.api.nvim_command([[
-  autocmd InsertEnter * set cursorcolumn
-  autocmd InsertLeave * set nocursorcolumn
-]])
+function configAirlinePlugin()
+  vim.g.airline_theme='angr'
+end
 
--- Color config
-vim.g.gruvbox_contrast_dark = 'hard'
-vim.api.nvim_command([[
-  colorscheme gruvbox
-  highlight Normal  ctermbg=239
-  highlight clear LineNr
-  highlight CursorLineNr ctermbg=243 
-  highlight CursorLine cterm=NONE ctermbg=243 ctermfg=lightgreen
-]])
+function configTabooPlugin()
+  vim.g.taboo_tab_format='  %N: %P  |'
+end
 
---set visual mode selected color
-vim.api.nvim_command([[
-  highlight Visual cterm=NONE ctermbg=green ctermfg=red
-]])
+function configTabInput()
+  -- tab relevant config
+  -- show existing tab with 4 spaces width
+  vim.opt.tabstop=2
+  -- when indenting with '>', use 4 spaces width
+  vim.opt.shiftwidth=2
+  -- On pressing tab, insert 4 spaces
+  vim.opt.expandtab=true
+end
 
--- Tabline Config
-vim.api.nvim_command([[
-   highlight TabLine      ctermfg=White  ctermbg=239     cterm=NONE
-   highlight TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
-]])
+function configVimChoosewinPlugin() 
+  --vim-choosewin plugin config
+  vim.g.choosewin_overlay_enable = 1
+  vim.g.choosewin_color_overlay = {
+    gui= {'DodgerBlue3', 'DodgerBlue3'},
+    cterm= {105, 105}
+  }
+  vim.g.choosewin_color_overlay_current = {
+    gui= {'firebrick1', 'firebrick1'},
+    cterm={124, 124}
+  }
+  vim.g.choosewin_tabline_replace = 0
+  vim.g.choosewin_blink_on_land= 0
+end
 
--- typescript settings
-vim.api.nvim_command([[
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.react
-]])
+function addCursorLineInEditingMode()
+  vim.opt.cul=true
+  vim.api.nvim_command([[
+    autocmd InsertEnter * set cursorcolumn
+    autocmd InsertLeave * set nocursorcolumn
+  ]])
+end
+
+function configMainColor()
+  vim.g.gruvbox_contrast_dark = 'hard'
+  vim.api.nvim_command([[
+    colorscheme gruvbox
+    highlight Normal  ctermbg=239
+    highlight clear LineNr
+    highlight CursorLineNr ctermbg=243 
+    highlight CursorLine cterm=NONE ctermbg=243 ctermfg=lightgreen
+  ]])
+end
+
+function configSelectedColorInVisualMode()
+  vim.api.nvim_command([[
+    highlight Visual cterm=NONE ctermbg=green ctermfg=red
+  ]])
+end
+
+function configTablineColor()
+  vim.api.nvim_command([[
+     highlight TabLine      ctermfg=White  ctermbg=239     cterm=NONE
+     highlight TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
+  ]])
+end
+
+function setReactTypeScriptFileType()
+  vim.api.nvim_command([[
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.react
+  ]])
+end
+
+configEncoding()
+configLineNumber()
+configClipboard()
+configPythonPath()
+configQueryHighlight()
+configAckPlugin()
+configIndentLinePlugin()
+configPersistentEditingHistory()
+configListChar()
+configAirlinePlugin()
+configTabooPlugin()
+configTabInput()
+configVimChoosewinPlugin()
+addCursorLineInEditingMode()
+configSelectedColorInVisualMode()
+configMainColor()
+configTablineColor()
+setReactTypeScriptFileType()
 
 require('keymapping')
