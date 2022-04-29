@@ -1,0 +1,19 @@
+# ~/.tmuxinator/qj.yml
+
+name: configuration
+root: ~/.config
+
+windows:
+  - vimEditor:
+    - cd nvim
+    - vim
+  - tmuxEditor:
+    - cd tmux
+    - vim
+  - tmuxinatorEditor:
+    - cd tmuxinator
+    - vim
+  - dotEditor:
+    - cd dot
+    - vim
+  - cmd:

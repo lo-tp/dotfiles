@@ -1,0 +1,19 @@
+name: blog
+root: ~/Desktop/personal/document/blog
+
+windows:
+  - content:
+    - cd blog/source
+    - vim
+  - cmd:
+      layout: main-vertical 
+      panes:
+          - blog:
+            - cd blog
+            - npm run generate
+            - npm run preview
+          - public:
+            - cd blog/public
+            - git status
+  - global:
+    - git status

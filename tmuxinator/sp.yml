@@ -1,0 +1,43 @@
+name: Side Projects
+root: ~/Desktop/personal/project/javascript/
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session"
+
+windows:
+  - iFrameEditor:
+    - cd   react-iframe-helper
+    - vim 
+  - iFrame:
+      layout: even-horizontal
+      panes:
+        - runner:
+          - cd   react-iframe-helper
+          - npm run test
+        - git:
+          - cd   react-iframe-helper
+          - git status
+  - iFrameDemoEditor:
+    - cd  iframe-demo
+    - vim 
+  - iFrameDemo:
+      layout: main-vertical
+      panes:
+        - git:
+          - cd  iframe-demo
+          - git status
+        - runner:
+          - cd  iframe-demo
+          - REACT_APP_OTHER_URL="http://localhost:3002"  PORT=3001 npm start
+        - runner:
+          - cd  iframe-demo
+          - REACT_APP_OTHER_URL="http://localhost:3001"  PORT=3002 npm start
+  - playground:
+      layout: main-vertical
+      panes:
+        - editor:
+          - cd  playground
+          - export VIM_SESSION=$SESSION_HOME/playground.vim
+          - vim -S $VIM_SESSION
+        - runner:
+          - cd  playground
+          - npm start

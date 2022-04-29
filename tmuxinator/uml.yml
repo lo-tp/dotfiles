@@ -1,0 +1,19 @@
+name: uml
+root: ~/Desktop/personal/document/uml
+
+windows:
+  - content:
+    - vim tem.uml
+  - script:
+    - cd  ~/Desktop/personal/project/javascript/plantUML-cli
+    - vim main.js
+  - cmd:
+      layout: main-vertical 
+      panes:
+          - server:
+            - node ~/Desktop/personal/project/javascript/plantUML-cli -t svg -o /tmp -s http://www.plantuml.com/plantuml/ *.uml 
+          - git:
+            - git status
+          - git:
+            - cd  ~/Desktop/personal/project/javascript/plantUML-cli
+            - git status

@@ -3,7 +3,7 @@ configstore
 nvm
 coc
 framework
-tmuxinator
+tmuxinator/ali*
 nvim/plugged
 tmux/plugins
 vscode/extensions

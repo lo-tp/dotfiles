@@ -1,0 +1,14 @@
+name: resume
+root: ~/Desktop/personal/document/resume
+
+windows:
+  - content:
+    - vim
+  - cmd:
+      layout: main-vertical 
+      panes:
+          - blog:
+            - nvm use
+            - npm run dev
+          - public:
+            - git status

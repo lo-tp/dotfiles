@@ -1,0 +1,14 @@
+name: read to learn
+root: ~/Desktop/project/dart/flutter/r2r
+
+windows:
+  - editor:
+    - vim -S ~/Desktop/configuration/nvim/session/r2r.vim
+  - test: 
+    - flutter test lib/**/*.test.dart
+  - git:
+    - git status
+  - i18n: 
+    - echo 'flutter pub run intl_translation:extract_to_arb --output-dir=lib/i18n/translations lib/i18n/index.dart'
+  - runner:
+    - flutter run

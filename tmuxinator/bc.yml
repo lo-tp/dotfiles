@@ -1,0 +1,25 @@
+name: bean-count
+root: ~/Desktop/personal/document/ledger
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session/"
+  - export VIM_SESSION=$SESSION_HOME/beanCount.vim
+
+
+windows:
+  - editor: 
+    - vim -S $VIM_SESSION
+  - cmd:
+      layout: even-horizontal
+      panes:
+        - runner:
+          - bean-web 147.beancount --port 12000
+        - git:
+          - git status
+          - bean-check 147.beancount
+  - query:
+      layout: even-horizontal
+      panes:
+        - query editor:
+          - vim query
+        - query executor:
+          - cat query | xargs  bean-query -q 147.beancount | awk 'NR>2 {s+=$2;print $0} END {printf  "\ntotal           %f",s}'

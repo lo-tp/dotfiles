@@ -1,0 +1,8 @@
+name: javascript playground
+root: ~/Desktop/personal/project/javascript/playground
+
+windows:
+  - editor:
+    - vim index.js
+  - cmd:
+    - node index.js

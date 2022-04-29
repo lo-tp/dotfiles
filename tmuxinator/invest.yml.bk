@@ -1,0 +1,28 @@
+name: invest
+root: ~/Desktop/project/invest
+pre_window:
+  - source env/bin/activate
+  - export SESSION_HOME="~/.config/nvim/session"
+  - export DB_NAME="lucky_money"
+  - export DB_PORT=5434
+
+windows:
+  - editor:
+    - export VIM_SESSION=$SESSION_HOME/invest.vim
+    - vim -S $VIM_SESSION
+  - cmd:
+      layout: even-horizontal
+      panes:
+        - git:
+          - git status
+        - runner:
+          - ls script
+  - dockerPostgress:
+      layout: even-vertical 
+      panes:
+        - dockerInstance:
+          - docker run  --rm -e POSTGRES_DB=$DB_NAME -e POSTGRES_PASSWORD=q3LDNZ7PBxUePWC64a -v $PWD/db:/var/lib/postgresql/data --name $DB_NAME  -i -p $DB_PORT:5432 --expose $DB_PORT  postgres:alpine
+        - cmd:
+          - sleep 2
+          - docker exec -it $DB_NAME sh
+          - psql postgresql://localhost:5432/ -Upostgres

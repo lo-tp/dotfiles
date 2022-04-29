@@ -1,0 +1,15 @@
+name: android emulator
+root: ~/.config/android
+pre_window: 
+  - export ANDROID_SDK_ROOT=$XDG_CONFIG_HOME
+  - export ANDROID_EMULATOR_HOME=$ANDROID_SDK_ROOT/emulator
+
+
+windows:
+  - cmd:
+      layout: even-horizontal
+      panes:
+        - emulator:
+          - echo './sdk/emulator/emulator -avd Nexus6P'
+        - cmd:
+          - ls

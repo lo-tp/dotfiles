@@ -1,0 +1,52 @@
+# ~/.tmuxinator/qj.yml
+
+name: Learn Everything
+root: ~/Desktop/project/javascript/learnEverything
+
+windows:
+  - storeEditor:
+    - cd frontend/src/stores/Question
+    - vim
+  - pageEditor:
+    - cd frontend/src/pages/Question/Crud
+    - vim
+  - pageEditor1:
+    - cd frontend/src/pages/Question/List
+    - vim
+  - globalEditor: 
+    - cd frontend
+    - vim
+  - frontendManage: 
+      layout: main-vertical
+      panes:
+          - git:
+            - cd frontend
+          - hotServer:
+            - cd frontend
+            - REACT_APP_API_ADDRESS=http://localhost:3500 npm run start
+          - test:
+            - cd frontend
+  - backendEditor: 
+    - cd backend
+    - vim
+  - backendManage: 
+      layout: main-vertical
+      panes:
+          - git:
+            - cd backend
+          - hotServer:
+            - cd backend
+            - CORS_ORIGIN="http://localhost:20010" MONGO_URI="mongodb://learnEveryThing:n7GF2QuGdov5bnyR@cluster0-shard-00-00-mwf0d.mongodb.net:27017,cluster0-shard-00-01-mwf0d.mongodb.net:27017,cluster0-shard-00-02-mwf0d.mongodb.net:27017/newLearnEverything?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin" npm run start
+          - test:
+            - cd backend
+  - dbManage: 
+      layout: main-vertical
+      panes:
+          - editor:
+            - cd review
+            - vim index.js
+          - reivew:
+            - cd review
+          - mongo:
+            - cd mongo
+            - sh dump.sh

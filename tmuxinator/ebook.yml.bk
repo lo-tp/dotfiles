@@ -1,0 +1,27 @@
+name: ebook
+root: ~/Desktop/personal/document/ebook
+windows:
+  - new:
+      layout: main-vertical 
+      panes:
+          - editor:
+            - cd memo
+            - vim
+          - cmd:
+            - cd memo
+  - old:
+      layout: main-vertical 
+      panes:
+          - editor:
+            - cd notes
+            - vim
+          - cmd:
+            - cd notes
+  - server:
+      layout: main-vertical 
+      panes:
+          - server1:
+            - npm run start1
+          - server2:
+            - npm run start
+  - global:
