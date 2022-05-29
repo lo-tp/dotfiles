@@ -1,0 +1,39 @@
+name: dpc
+root: ~/Desktop/personal/project/javascript/dpc
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session"
+
+windows:
+  - feEditor:
+    - cd projects/frontend
+    - export VIM_SESSION=$SESSION_HOME/dpc_fe.vim
+    - vim -S $VIM_SESSION
+  - editor-cmd:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd projects/frontend
+          - git status
+        - runner:
+          - cd projects/frontend
+          - pnpm dev
+
+  - beEditor:
+    - cd projects/backend
+    - export VIM_SESSION=$SESSION_HOME/dpc_be.vim
+    - vim -S $VIM_SESSION
+  - editor-cmd:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd projects/backend
+          - git status
+        - runner:
+          - cd projects/backend
+          - pnpm dev
+
+  - globalEditor:
+    - export VIM_SESSION=$SESSION_HOME/dpc_global.vim
+    - vim -S $VIM_SESSION
+  - global-cmd:
+    - git status
