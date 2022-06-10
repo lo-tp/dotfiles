@@ -14,6 +14,6 @@ windows:
       layout: even-horizontal
       panes:
         - CMD:
-          - mdanki /tmp/k.md /tmp/tmp.apkg --deck tmp
+          - mdanki /tmp/k.md /tmp/tmp.apkg --deck new
         - editor:
           - vim /tmp/k.md
