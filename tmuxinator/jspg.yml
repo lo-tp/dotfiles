@@ -3,13 +3,13 @@
 name: javascript playground
 root: ~/Desktop/personal/project/javascript/playground
 windows:
-  - editor:
+  - vueEditor:
     - export VIM_SESSION=~/.config/nvim/session/jspg.vim
     - vim -S $VIM_SESSION
-  - cmd:
-      layout: even-horizontal
+  - vueCmd:
+      layout: main-vertical
       panes:
-        - runner:
-          - git status
         - git:
           - git status
+        - runner:
+          - pnpm run dev 

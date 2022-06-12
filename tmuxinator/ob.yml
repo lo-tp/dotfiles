@@ -2,7 +2,6 @@ name: Obsidian
 root: ~/Desktop/personal/document/obsidian vault
 
 pre_window: 
-  - export MD_ANKI=~/Desktop/personal/project/javascript/mdanki
   - export SESSION_HOME="~/.config/nvim/session"
   - export VIM_SESSION=$SESSION_HOME/obsidian.vim
 
@@ -15,6 +14,6 @@ windows:
       layout: even-horizontal
       panes:
         - CMD:
-          - $MD_ANKI/node_modules/.bin/mdanki /tmp/k.md /tmp/tmp.apkg --deck tmp
+          - mdanki /tmp/k.md /tmp/tmp.apkg --deck tmp
         - editor:
           - vim /tmp/k.md

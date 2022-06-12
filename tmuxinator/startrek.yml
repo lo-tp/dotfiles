@@ -1,0 +1,18 @@
+name: Star Trek
+root: ~/Desktop/personal/project/startrek
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session"
+
+windows:
+  - Editor:
+    - cd projects/frontend
+    - export VIM_SESSION=$SESSION_HOME/startrek.vim
+    - vim -S $VIM_SESSION
+
+  - Cmd:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - git status
+        - runner:
+          - date
