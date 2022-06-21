@@ -1,14 +1,15 @@
 name: resume
-root: ~/Desktop/personal/document/resume
+root: ~/Desktop/personal/project/javascript/resume
 
 windows:
   - content:
-    - vim
+    - export SESSION_HOME="~/.config/nvim"
+    - export VIM_SESSION=$SESSION_HOME/resuem.vim
+    - vim -S $VIM_SESSION
   - cmd:
       layout: main-vertical 
       panes:
-          - blog:
-            - nvm use
-            - npm run dev
           - public:
             - git status
+          - server:
+            - pnpm run dev
