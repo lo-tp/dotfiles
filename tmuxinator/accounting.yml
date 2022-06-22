@@ -1,0 +1,16 @@
+name: Accounting
+root: ~/Desktop/personal/project/javascript/accounting
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session"
+
+windows:
+  - Editor:
+    - export VIM_SESSION=$SESSION_HOME/accounting.vim
+    - vim -S $VIM_SESSION
+  - cmd:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - git status
+        - runner:
+          - pnpm dev -- -p 12000
