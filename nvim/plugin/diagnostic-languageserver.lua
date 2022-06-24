@@ -29,6 +29,7 @@ local filetypes = {
   typescript = 'eslint',
   typescriptreact = 'eslint',
   vue = 'eslint',
+  ["typescript.react"] = 'eslint',
 }
 
 local formatters = {
@@ -41,7 +42,7 @@ local formatFiletypes = {
 }
 
 nvim_lsp.diagnosticls.setup{
-  filetypes = { 'vue', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'  },
+  filetypes = { 'vue', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'typescript.react'  },
   init_options = {
     linters = linters,
     filetypes = filetypes,
