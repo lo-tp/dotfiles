@@ -2,7 +2,7 @@
 vim.api.nvim_set_keymap(
   "n",
   "Y",
-  ":Format<cr>",
+  ":EslintFixAll<cr>",
   { noremap = true }
  )
 
