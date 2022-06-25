@@ -4,7 +4,7 @@ root: ~/Desktop/personal/project/javascript/resume
 windows:
   - content:
     - export SESSION_HOME="~/.config/nvim"
-    - export VIM_SESSION=$SESSION_HOME/resuem.vim
+    - export VIM_SESSION=$SESSION_HOME/resume.vim
     - vim -S $VIM_SESSION
   - cmd:
       layout: main-vertical 
