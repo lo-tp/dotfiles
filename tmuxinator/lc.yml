@@ -31,7 +31,6 @@ windows:
   - editor: 
     - export VIM_SESSION=~/.config/nvim/session/lc.vim
     - vim -S $VIM_SESSION
-    - \:CocDisable
 
   - globalCmd:
       layout: even-horizontal
