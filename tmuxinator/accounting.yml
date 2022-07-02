@@ -14,3 +14,12 @@ windows:
           - git status
         - runner:
           - pnpm dev -- -p 12000
+  - curl:
+      layout: main-vertical
+      panes:
+        - editor:
+          - cd curl
+          - vim
+        - runner:
+          - cd curl
+          - git status
