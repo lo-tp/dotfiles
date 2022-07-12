@@ -1,6 +1,6 @@
 require('lib.mapping').map(
   "n",
   "Y",
-  ":Format<cr>",
+  ":FormatWrite<cr>",
   { noremap = true }
 )

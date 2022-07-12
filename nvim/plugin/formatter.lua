@@ -34,11 +34,11 @@ require("formatter").setup(
       python = {
       function()
         return {
-          exe = "python3 -m black",
+          exe = "black",
           args = {
-            vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+            "-q -",
           },
-          stdin = false
+          stdin = true
         }
       end
       },
