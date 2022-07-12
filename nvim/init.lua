@@ -147,4 +147,6 @@ configMainColor()
 configTablineColor()
 setReactTypeScriptFileType()
 
+
+require('plugin')
 require('keymapping')
