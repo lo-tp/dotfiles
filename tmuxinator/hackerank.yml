@@ -1,0 +1,26 @@
+name: Hackerank
+root: ~/Desktop/Personal/project/javascript/hackerank
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session/hackerank"
+
+windows:
+  - javascript:
+      layout: main-vertical
+      panes:
+        - editor:
+          - cd javascriptTest
+          - vim index.js
+        - cmd:
+          - cd javascriptTest
+          - prettier index.js -w
+          - node index.js
+
+  - css:
+      layout: main-vertical
+      panes:
+        - editor:
+          - cd css
+          - vim style.css
+        - cmd:
+          - cd css
+          - ruby -run -e httpd . -p 8001

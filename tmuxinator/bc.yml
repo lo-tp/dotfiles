@@ -6,7 +6,7 @@ pre_window:
 
 
 windows:
-  - editor: 
+  - frontEditor: 
     - vim -S $VIM_SESSION
   - cmd:
       layout: even-horizontal

@@ -4,8 +4,11 @@ pre_window:
   - export SESSION_HOME="~/.config/nvim/session"
 
 windows:
-  - Editor:
-    - export VIM_SESSION=$SESSION_HOME/accounting.vim
+  - FrontendEditor:
+    - export VIM_SESSION=$SESSION_HOME/accountingFrontend.vim
+    - vim -S $VIM_SESSION
+  - BackendEditor:
+    - export VIM_SESSION=$SESSION_HOME/accountingBackend.vim
     - vim -S $VIM_SESSION
   - cmd:
       layout: main-vertical
