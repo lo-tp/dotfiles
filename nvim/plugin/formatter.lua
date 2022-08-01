@@ -19,6 +19,9 @@ require("formatter").setup(
   {
     logging = true,
     filetype = {
+      ['javascript'] = {
+        tsFormat
+      },
       ['typescript.react'] = {
         tsFormat
       },
