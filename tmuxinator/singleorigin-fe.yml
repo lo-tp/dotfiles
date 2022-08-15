@@ -1,0 +1,33 @@
+name: Single Origin FE
+root: ~/Desktop/Single Origin/code/
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session/single-origin"
+  - nvm use v16.16.0
+
+windows:
+  - Public Editor:
+    - cd singleorigin-public
+    - export VIM_SESSION=$SESSION_HOME/public.vim
+    - vim -S $VIM_SESSION
+  - Public CMD:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd singleorigin-public
+          - git status
+        - runner:
+          - cd singleorigin-public
+          - pnpm dev -- -p 21001
+  - Web Editor:
+    - cd singleorigin-web
+    - export VIM_SESSION=$SESSION_HOME/web.vim
+    - vim -S $VIM_SESSION
+  - Web CMD:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd singleorigin-web
+          - git status
+        - runner:
+          - cd singleorigin-web
+          - pnpm dev -- -p 21002
