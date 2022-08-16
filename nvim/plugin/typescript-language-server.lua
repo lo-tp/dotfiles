@@ -41,6 +41,6 @@ nvim_lsp.tsserver.setup {
     on_attach(client)
     client.resolved_capabilities.document_formatting = false
   end,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "typescript.react"}
+  filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx", "typescript.react"}
 }
 
