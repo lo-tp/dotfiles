@@ -2,6 +2,7 @@ name: Hackerank
 root: ~/Desktop/Personal/project/javascript/hackerank
 pre_window: 
   - export SESSION_HOME="~/.config/nvim/session/hackerank"
+  - export VIM_LINTER='prettier'
 
 windows:
   - javascript:
@@ -23,4 +24,20 @@ windows:
           - vim style.css
         - cmd:
           - cd css
-          - ruby -run -e httpd . -p 8001
+          - ruby -run -e httpd . -p 61002
+
+  - React Editor:
+    - cd react
+    - vim
+
+  - React CMD:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd react
+        - server:
+          - cd react
+          - pnpm dev --port 61001
+
+  - Global CMD:
+    - git status
