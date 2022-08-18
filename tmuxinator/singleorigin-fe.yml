@@ -3,6 +3,8 @@ root: ~/Desktop/Single Origin/code/
 pre_window: 
   - export SESSION_HOME="~/.config/nvim/session/single-origin"
   - export VIM_LINTER='prettier'
+  - export MFA_STS_DURATION=129600
+  - export KUBECONFIG=~/.kube/config-aws
   - nvm use v16.16.0
 
 windows:
@@ -16,9 +18,12 @@ windows:
         - cmd:
           - cd singleorigin-web
           - git status
-        - runner:
+        - kubernetes:
           - cd singleorigin-web
-          - pnpm dev -- -p 21002
+          - kubectl port-forward -n staging svc/kona-staging-core 21002:8080 21003:9090
+        - server:
+          - cd singleorigin-web
+          - pnpm dev
   - Public Editor:
     - cd singleorigin-public
     - export VIM_SESSION=$SESSION_HOME/public.vim
