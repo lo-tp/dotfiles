@@ -20,7 +20,7 @@ windows:
           - git status
         - kubernetes:
           - cd singleorigin-web
-          - kubectl port-forward -n staging svc/kona-staging-core 21002:8080 21003:9090
+          - echo 'kubectl port-forward -n staging svc/kona-staging-core 21002:8080 21003:9090'
         - server:
           - cd singleorigin-web
           - pnpm dev
