@@ -1,7 +1,7 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig' --A collection of common configurations for Neovim's built-in language server client
-  use 'vim-scripts/The-NERD-tree'
+  use 'preservim/nerdtree'
   use 'Chiel92/vim-autoformat' --Provide easy code formatting in Vim by integrating existing code formatters.
   use 'mileszs/ack.vim' -- Quick Search File Content
   use 'scrooloose/nerdcommenter'  -- Vim plugin for intensely orgasmic commenting
