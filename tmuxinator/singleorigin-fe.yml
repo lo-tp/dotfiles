@@ -1,5 +1,5 @@
 name: Single Origin FE
-root: ~/Desktop/Single Origin/code/
+root: ~/Desktop/Single-Origin/code/
 pre_window: 
   - export SESSION_HOME="~/.config/nvim/session/single-origin"
   - export VIM_LINTER='prettier'
@@ -24,6 +24,9 @@ windows:
         - server:
           - cd singleorigin-web
           - pnpm dev
+        - storybook:
+          - cd singleorigin-web
+          - pnpm storybook
   - Public Editor:
     - cd singleorigin-public
     - export VIM_SESSION=$SESSION_HOME/public.vim
