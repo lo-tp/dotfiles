@@ -122,6 +122,11 @@ function configTablineColor()
   ]])
 end
 
+function configNerdTree()
+  vim.g.NERDTreeQuitOnOpen = 1
+end
+
+
 function setReactTypeScriptFileType()
   vim.api.nvim_command([[
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript.react
@@ -145,6 +150,7 @@ addCursorLineInEditingMode()
 configSelectedColorInVisualMode()
 configMainColor()
 configTablineColor()
+configNerdTree()
 setReactTypeScriptFileType()
 
 
