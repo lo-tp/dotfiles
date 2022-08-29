@@ -13,7 +13,7 @@ return require('packer').startup(function()
   use 'mattn/emmet-vim' 
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-  use {'tami5/lspsaga.nvim',  branch= 'nvim6.0'} --Lspsaga is light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
+  use {'glepnir/lspsaga.nvim',  branch= 'main'} --Lspsaga is light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim' --Gaze deeply into unknown regions using the power of the moon.
   use {'nvim-telescope/telescope-fzf-native.nvim', branch = 'main', run = 'make' } --fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
