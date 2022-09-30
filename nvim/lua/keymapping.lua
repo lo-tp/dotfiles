@@ -33,7 +33,21 @@ map("n", "<leader>S", ":wa<cr>", { noremap = true })
 map("n", "<leader>o", "<cmd>Telescope find_files<cr>", { noremap = true })
 
 -- The-Nerd-Tree
+function toggleNerdTree()
+  if vim.g.NERDTreeQuitOnOpen == 1
+  then
+    vim.g.NERDTreeQuitOnOpen = 0
+  else
+    vim.g.NERDTreeQuitOnOpen = 1
+  end
+  print(vim.g.NERDTreeQuitOnOpen)
+end
 map("n", "<leader>w", ":NERDTree<CR>", { noremap = true })
+vim.api.nvim_create_user_command(
+  'ToggleNerdTree',
+  toggleNerdTree,
+  {}
+)
 
 -- choosewin
 map("n", "-", "<Plug>(choosewin)", {})
