@@ -27,4 +27,5 @@ return require('packer').startup(function()
   use 'morhetz/gruvbox' --A bright theme with pastel 'retro groove' colors
   use 'liuchengxu/vista.vim' --View and search LSP symbols, tags in Vim/NeoVim.
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'} --Nvim Treesitter configurations and abstraction layer
+  use 'hallison/vim-markdown'
 end)
