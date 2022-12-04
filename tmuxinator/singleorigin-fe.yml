@@ -2,10 +2,9 @@ name: Single Origin FE
 root: ~/Desktop/Single-Origin/code/
 pre_window: 
   - export SESSION_HOME="~/.config/nvim/session/single-origin"
-  - export VIM_LINTER='prettier'
   - export MFA_STS_DURATION=129600
   - export KUBECONFIG=~/.kube/config-aws
-  - nvm use v16.16.0
+  - nvm use v16.17.0
 
 windows:
   - Web Editor:
@@ -27,6 +26,15 @@ windows:
         - storybook:
           - cd singleorigin-web
           - pnpm storybook
+  - Lineage Editor:
+    - cd singleorigin-web
+    - export VIM_SESSION=$SESSION_HOME/web-lineage.vim
+    - vim -S $VIM_SESSION
+
+  - E2e Editor:
+    - cd singleorigin-web
+    - export VIM_SESSION=$SESSION_HOME/e2e.vim
+    - vim -S $VIM_SESSION
   - Public Editor:
     - cd singleorigin-public
     - export VIM_SESSION=$SESSION_HOME/public.vim
@@ -40,3 +48,7 @@ windows:
         - runner:
           - cd singleorigin-public
           - pnpm dev -- -p 21001
+  - Storybook Editor:
+    - cd singleorigin-web/stories
+    - export VIM_SESSION=$SESSION_HOME/webStories.vim
+    - vim -S $VIM_SESSION
