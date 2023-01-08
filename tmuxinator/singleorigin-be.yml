@@ -1,0 +1,28 @@
+name: Single Origin BE
+root: ~/Desktop/Single-Origin/code/singleorigin-api
+pre_window: 
+  - export JAVA_HOME=~/.config/java/jdk-17.0.6.jdk/Contents/Home/
+  - export PATH=%JAVA_HOME/bin:$PATH
+  - export SESSION_HOME="~/.config/nvim/session/single-origin"
+  - export DOCKER_BUILDKIT=0 
+  - export COMPOSE_PROFILES=infra,core
+
+windows:
+  - API Editor:
+    - export VIM_SESSION=$SESSION_HOME/api.vim
+    - vim -S $VIM_SESSION
+  - API CMD:
+    - git status
+  - API-Runner:
+    - sleep 40
+    - java -jar ./core/build/libs/core-1.0-SNAPSHOT.jar
+  - Docker:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd dev
+          - docker-compose build
+          - docker-compose up
+        - runner:
+          - cd dev
+          - docker-compose help
