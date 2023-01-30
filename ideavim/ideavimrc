@@ -1,5 +1,6 @@
 set visualbell
 set noerrorbells
+set nooldundo
 let mapleader = " "
 
 noremap <leader>gd :action GotoDeclaration<cr>
