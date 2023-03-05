@@ -6,7 +6,7 @@ return require('packer').startup(function()
   use 'mileszs/ack.vim' -- Quick Search File Content
   use 'scrooloose/nerdcommenter'  -- Vim plugin for intensely orgasmic commenting
   use 't9md/vim-choosewin' --Land on window you chose like tmux's 'display-pane'
-  use 'gcmt/taboo.vim' --Few utilities for pretty tabs
+  use 'lo-tp/taboo.vim' --Few utilities for pretty tabs
   use 'junegunn/vim-peekaboo' --Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
   use 'ap/vim-css-color' --Preview colours in source code while editing
   use 'Asheq/close-buffers.vim' --Bdelete several buffers at once
