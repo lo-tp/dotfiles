@@ -62,7 +62,7 @@ function configAirlinePlugin()
 end
 
 function configTabooPlugin()
-  vim.g.taboo_tab_format='  %N: %P  |'
+  vim.g.taboo_tab_format='%B %P| '
 end
 
 function configTabInput()
@@ -78,6 +78,8 @@ end
 function configVimChoosewinPlugin() 
   --vim-choosewin plugin config
   vim.g.choosewin_overlay_enable = 1
+  vim.g.choosewin_label=  '123456789'
+  vim.g.choosewin_tablabel= 'ABCDEFGHIJKLMNOPQRTUVWYZ'
   vim.g.choosewin_color_overlay = {
     gui= {'DodgerBlue3', 'DodgerBlue3'},
     cterm= {105, 105}
