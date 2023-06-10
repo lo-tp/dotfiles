@@ -137,6 +137,7 @@ local config = {
     '-Xmx4g',
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+    '-javaagent:'..home .. '/.config/java/lombok-1.18.20.jar',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
     -- If you use lombok, download the lombok jar and place it in ~/.local/share/eclipse
     --'-javaagent:' .. home .. '/.local/share/eclipse/lombok.jar',
