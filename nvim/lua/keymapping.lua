@@ -6,6 +6,10 @@ map("n","<C-T>", ":tabnew<CR>",{ noremap = true })
 map("n", "<c-w>", ":q<cr>", { noremap = true })
 
 -- Window Related
+map("n", "<C-H>", "<C-W>h", { noremap = true })
+map("n", "<C-L>", "<C-W>l", { noremap = true })
+map("n", "<C-K>", "<C-W>k", { noremap = true })
+map("n", "<C-J>", "<C-W>j", { noremap = true })
 map("n", "<leader>z", ":vsplit<cr>", { noremap = true })
 map("n", "<leader>Z", ":split<cr>", { noremap = true })
 map("n", "<F1>", ":res -1<cr>", { noremap = true })
