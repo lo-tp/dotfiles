@@ -29,16 +29,13 @@ windows:
   - Lineage Editor:
     - cd singleorigin-web
     - export VIM_SESSION=$SESSION_HOME/web-lineage.vim
-    - vim -S $VIM_SESSION
 
   - E2e Editor:
     - cd singleorigin-web
     - export VIM_SESSION=$SESSION_HOME/e2e.vim
-    - vim -S $VIM_SESSION
   - Public Editor:
     - cd singleorigin-public
     - export VIM_SESSION=$SESSION_HOME/public.vim
-    - vim -S $VIM_SESSION
   - Public CMD:
       layout: main-vertical
       panes:
@@ -51,4 +48,3 @@ windows:
   - Storybook Editor:
     - cd singleorigin-web/stories
     - export VIM_SESSION=$SESSION_HOME/webStories.vim
-    - vim -S $VIM_SESSION

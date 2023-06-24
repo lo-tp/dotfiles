@@ -1,0 +1,9 @@
+name: Game Portint Kit
+root: ~/Desktop/Personal/Games/GamePortToolkit
+pre_window: 
+  - eval "$(homebrew/bin/brew shellenv)"
+  - export WINEPREFIX=~/Desktop/Personal/Games/GamePortToolkit/Battlenet
+
+windows:
+  - Runner:
+    - echo "gameportingtoolkit ~/Desktop/Personal/Games/GamePortToolkit/Battlenet 'C:\Program Files (x86)\Diablo II Resurrected/Diablo II Resurrected Launcher.exe'"

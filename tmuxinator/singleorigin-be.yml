@@ -8,21 +8,35 @@ pre_window:
   - export COMPOSE_PROFILES=infra,core
 
 windows:
-  - API Editor:
-    - export VIM_SESSION=$SESSION_HOME/api.vim
-    - vim -S $VIM_SESSION
+  - Core Editor:
+    - cd core
+    - export VIM_SESSION=$SESSION_HOME/api-core.vim
   - API CMD:
     - git status
   - API-Runner:
     - sleep 40
-    - java -jar ./core/build/libs/core-1.0-SNAPSHOT.jar
+    - echo 'java -jar ./core/build/libs/core-1.0-SNAPSHOT.jar'
   - Docker:
       layout: main-vertical
       panes:
         - cmd:
           - cd dev
-          - docker-compose build
-          - docker-compose up
+          - echo 'docker-compose build'
+          - echo 'docker-compose up'
         - runner:
           - cd dev
           - docker-compose help
+  - Proto Editor:
+    - cd proto
+    - export VIM_SESSION=$SESSION_HOME/proto.vim
+
+  - Proto CMD:
+    - cd proto
+    - git status
+
+  - API Editor:
+    - export VIM_SESSION=$SESSION_HOME/api.vim
+  - Auth Editor:
+    - cd auth
+    - export VIM_SESSION=$SESSION_HOME/api-auth.vim
+
