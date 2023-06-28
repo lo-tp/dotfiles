@@ -28,4 +28,5 @@ return require('packer').startup(function()
   use 'liuchengxu/vista.vim' --View and search LSP symbols, tags in Vim/NeoVim.
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'} --Nvim Treesitter configurations and abstraction layer
   use 'mfussenegger/nvim-jdtls'
+  use 'uiiaoo/java-syntax.vim'
 end)
