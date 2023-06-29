@@ -21,31 +21,41 @@ end
 -- The on_attach function is used to set key maps after the language server
 -- attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Regular Neovim LSP client keymappings
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  nnoremap('gD', vim.lsp.buf.declaration, bufopts, "Go to declaration")
-  nnoremap('gd', vim.lsp.buf.definition, bufopts, "Go to definition")
-  nnoremap('gi', vim.lsp.buf.implementation, bufopts, "Go to implementation")
-  nnoremap('K', vim.lsp.buf.hover, bufopts, "Hover text")
-  nnoremap('<C-k>', vim.lsp.buf.signature_help, bufopts, "Show signature")
-  nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, bufopts, "Add workspace folder")
-  nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts, "Remove workspace folder")
-  nnoremap('<space>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts, "List workspace folders")
-  nnoremap('<space>D', vim.lsp.buf.type_definition, bufopts, "Go to type definition")
-  nnoremap('<space>rn', vim.lsp.buf.rename, bufopts, "Rename")
-  nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
-  vim.keymap.set('v', "<space>ca", "<ESC><CMD>lua vim.lsp.buf.range_code_action()<CR>",
-    { noremap=true, silent=true, buffer=bufnr, desc = "Code actions" })
-  nnoremap('<space>f', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
 
   -- Java extensions provided by jdtls
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
   nnoremap("<C-o>", jdtls.organize_imports, bufopts, "Organize imports")
   nnoremap("<space>ev", jdtls.extract_variable, bufopts, "Extract variable")
   nnoremap("<space>ec", jdtls.extract_constant, bufopts, "Extract constant")
   vim.keymap.set('v', "<space>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
     { noremap=true, silent=true, buffer=bufnr, desc = "Extract method" })
+
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(0, ...) end
+
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', "<cmd>Lspsaga hover_doc<cr>", opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>Lspsaga rename<cr>', opts)
+  buf_set_keymap('n', '<leader>ac', '<cmd>Lspsaga code_action<cr>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[c', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opts)
+  buf_set_keymap('n', ']c', '<cmd>Lspsaga diagnostic_jump_next<cr>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
 end
 
 local config = {
