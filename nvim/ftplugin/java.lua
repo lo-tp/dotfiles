@@ -150,7 +150,7 @@ local config = {
     '-configuration', home .. '/.config/java/jdt-language-server-1.9.0-202203031534/config_mac',
 
     -- Use the workspace_folder defined above to store data for this project
-    '-data', '/tmp/kk,'
+    '-data', workspace_folder
   },
 }
 
