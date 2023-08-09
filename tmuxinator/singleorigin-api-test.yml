@@ -1,0 +1,16 @@
+name: Single Origin API Test
+root: ~/Desktop/Single-Origin/code/singleorigin-api-test
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session/single-origin"
+  - cd singleorigin-api-test
+
+windows:
+  - Editor:
+    - export VIM_SESSION=$SESSION_HOME/apiTest.vim
+  - CMD:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - git status
+        - cmd1:
+          - npm test

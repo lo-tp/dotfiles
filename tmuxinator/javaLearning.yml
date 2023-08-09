@@ -1,0 +1,13 @@
+name: Java Learning
+root: ~/Desktop/Personal/project/java
+pre_window: 
+  - export JAVA_HOME=~/.config/java/jdk-17.0.6.jdk/Contents/Home/
+  - export PATH=%JAVA_HOME/bin:$PATH
+  - export SESSION_HOME="~/.config/nvim/session"
+
+windows:
+  - Editor:
+    - cd core
+    - export VIM_SESSION=$SESSION_HOME/java-learning.vim
+  - CMD:
+    - git status

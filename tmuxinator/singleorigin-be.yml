@@ -39,4 +39,12 @@ windows:
   - Auth Editor:
     - cd auth
     - export VIM_SESSION=$SESSION_HOME/api-auth.vim
-
+  - DB Playground:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd ../guide
+          - cat sqlCommand | psql postgresql://postgres:postgres@localhost:5432 -f -
+        - edit:
+          - cd ../guide
+          - vim sqlCommand

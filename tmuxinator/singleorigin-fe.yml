@@ -23,9 +23,6 @@ windows:
         - server:
           - cd singleorigin-web
           - pnpm dev
-        - storybook:
-          - cd singleorigin-web
-          - pnpm storybook
   - Lineage Editor:
     - cd singleorigin-web
     - export VIM_SESSION=$SESSION_HOME/web-lineage.vim
