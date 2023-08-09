@@ -1,0 +1,18 @@
+name: Single Origin General
+root: ~/Desktop/Single-Origin/code
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session/single-origin"
+
+windows:
+  - Proto Editor:
+    - cd proto
+    - export VIM_SESSION=$SESSION_HOME/proto.vim
+  - Proto CMD:
+    - cd proto
+    - git status
+  - Helm Editor:
+    - cd helm
+    - export VIM_SESSION=$SESSION_HOME/helm.vim
+  - Helm CMD:
+    - cd helm
+    - git status
