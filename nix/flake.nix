@@ -9,11 +9,12 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
-    configuration = { pkgs, ... }: {
+    configuration = {lib, pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.vim
+          pkgs.obsidian
         ];
 
       # Necessary for using flakes on this system.
@@ -31,6 +32,11 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.config.allowUnfreePredicate = pkg:
+         builtins.elem (lib.getName pkg) [
+           # Add additional package names here
+           "obsidian"
+         ];
     };
   in
   {
