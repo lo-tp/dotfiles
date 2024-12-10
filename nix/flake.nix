@@ -15,6 +15,7 @@
       environment.systemPackages =
         [ pkgs.vim
           pkgs.obsidian
+          pkgs.postgresql_17
         ];
 
       # Necessary for using flakes on this system.
