@@ -15,7 +15,7 @@ windows:
     - git status
   - API-Runner:
     - sleep 40
-    - echo 'java -jar ./core/build/libs/core-1.0-SNAPSHOT.jar'
+    - echo 'java --add-opens java.base/java.nio=ALL-UNNAMED -jar ./core/build/libs/core-1.0-SNAPSHOT.jar'
   - Docker:
       layout: main-vertical
       panes:
@@ -28,6 +28,14 @@ windows:
           - docker-compose help
   - API Editor:
     - export VIM_SESSION=$SESSION_HOME/api.vim
+  - Meta-Integration Editor:
+    - cd metadata-integrations
+    - export VIM_SESSION=$SESSION_HOME/meta-integration.vim
+
+  - Connector Editor:
+    - cd connectors
+    - export VIM_SESSION=$SESSION_HOME/connectors.vim
+
   - Auth Editor:
     - cd auth
     - export VIM_SESSION=$SESSION_HOME/api-auth.vim

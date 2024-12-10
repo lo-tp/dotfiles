@@ -8,11 +8,56 @@ windows:
     - cd proto
     - export VIM_SESSION=$SESSION_HOME/proto.vim
   - Proto CMD:
-    - cd proto
-    - git status
+      layout: main-vertical
+      panes:
+        - cmd 0:
+          - cd proto
+          - git status
+          - export GOPATH=$HOME/go
+          - export PATH=$PATH:$GOPATH/bin
+          - source .venv/bin/activate
+          - scripts/generate_openapi.py singleorigin-api
+        - cmd 1:
+          - cd proto/singleorigin-api
+          - buf lint
   - Helm Editor:
     - cd helm
     - export VIM_SESSION=$SESSION_HOME/helm.vim
   - Helm CMD:
     - cd helm
     - git status
+  - Terraform Editor:
+    - cd terraform
+    - export VIM_SESSION=$SESSION_HOME/terraform.vim
+  - Terraform CMD:
+      layout: main-vertical
+      panes:
+        - cmd 0:
+          - cd terraform
+          - git status
+        - cmd 1:
+          - cd terraform
+  - Airflow Editor:
+    - cd airflow-dag
+    - export VIM_SESSION=$SESSION_HOME/airflow.vim
+  - Airflow CMD:
+      layout: main-vertical
+      panes:
+        - cmd 0:
+          - cd airflow-dag
+          - git status
+        - cmd 1:
+          - cd airflow-dag
+  - Bootstrap Editor:
+    - cd tenant-bootstrap
+    - export VIM_SESSION=$SESSION_HOME/tenantBootstrap.vim
+
+  - Bootstrap CMD:
+    layout: main-vertical
+    panes:
+      - cmd 0:
+        - cd tenant-bootstrap
+        - git status
+      - cmd 1:
+        - cd tenant-bootstrap
+        - source .venv/bin/activate

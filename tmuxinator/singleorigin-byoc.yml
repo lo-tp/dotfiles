@@ -1,0 +1,24 @@
+name: Single Origin BYOC
+root: ~/Desktop/Single-Origin/code
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session/single-origin"
+  - export AWS_PROFILE=staging
+  - kubectl config use-context main-eks-cluster-staging
+
+windows:
+  - K9s:
+    - echo "k9s --context main-eks-cluster-staging"
+  - Portward:
+      layout: main-vertical
+      panes:
+        - port forward core:
+          - echo 'kubectl port-forward tenant-sandbox-core-64f858c47f-k7rb5     8081:8080'
+        - kill core portward process:
+          - echo "ps | grep 64f8 | awk '{print $1}'  | xargs -I{} kill -9 {}"
+  - Helm Editor:
+    - cd helm-byoc
+    - export VIM_SESSION=$SESSION_HOME/helm-byoc.vim
+    - vim -S $VIM_SESSION
+  - Helm CMD:
+    - cd helm-byoc
+    - git status

@@ -1,0 +1,21 @@
+name: proxmox
+root: ~/Desktop/Personal/project/proxmox
+
+windows:
+  - docker-compose:
+    - export VIM_SESSION=~/.config/nvim/session/proxmox-docker-compose.vim
+    - vim -S $VIM_SESSION
+  - cmd:
+      layout: main-vertical 
+      panes:
+          - server:
+          - git:
+            - git status
+  - nix:
+      layout: main-vertical 
+      panes:
+          - editor:
+            - cd nixPlayGround
+          - shell:
+            - cd nixPlayGround
+            - echo 'docker run -it -v $(pwd):/workdir nixos/nix'

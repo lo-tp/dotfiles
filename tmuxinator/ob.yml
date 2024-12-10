@@ -4,6 +4,7 @@ root: ~/Desktop/personal/document/obsidian vault
 pre_window: 
   - export SESSION_HOME="~/.config/nvim/session"
   - export VIM_SESSION=$SESSION_HOME/obsidian.vim
+  - export NEW_VIM_SESSION=$SESSION_HOME/new_obsidian.vim
 
 windows:
   - editor:
@@ -17,3 +18,9 @@ windows:
           - mdanki /tmp/k.md /tmp/tmp.apkg --deck new
         - editor:
           - vim /tmp/k.md
+  - new editor:
+    - cd ../kkk
+    - vim -S $NEW_VIM_SESSION
+  - new cmd:
+    - cd ../kkk
+    - ls
