@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>NIX_SSL_CERT_FILE</key>
+		<string>/etc/ssl/certs/ca-certificates.crt</string>
+		<key>OBJC_DISABLE_INITIALIZE_FORK_SAFETY</key>
+		<string>YES</string>
+		<key>HTTP_PROXY</key>
+		<string>PROXY_HOLDER</string>
+		<key>HTTPS_PROXY</key>
+		<string>PROXY_HOLDER</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>org.nixos.nix-daemon</string>
+	<key>LowPriorityIO</key>
+	<false/>
+	<key>ProcessType</key>
+	<string>Standard</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>/bin/wait4path /nix/store &amp;&amp; exec /nix/store/ckm9hpnd4fym65mkypbk7rmzp7m6ad0v-nix-2.24.10/bin/nix-daemon</string>
+	</array>
+	<key>SoftResourceLimits</key>
+	<dict>
+		<key>NumberOfFiles</key>
+		<integer>1048576</integer>
+	</dict>
+</dict>
+</plist>
