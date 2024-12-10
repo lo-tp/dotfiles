@@ -135,6 +135,11 @@ function setReactTypeScriptFileType()
   ]])
 end
 
+function configVista()
+  vim.g.vista_sidebar_width = '60'
+end
+
+
 configEncoding()
 configLineNumber()
 configClipboard()
@@ -154,6 +159,7 @@ configMainColor()
 configTablineColor()
 configNerdTree()
 setReactTypeScriptFileType()
+configVista()
 
 
 require('plugin')
