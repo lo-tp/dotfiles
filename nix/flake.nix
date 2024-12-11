@@ -14,7 +14,6 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.vim
-          pkgs.obsidian
           pkgs.postgresql_17
         ];
 
@@ -40,10 +39,12 @@
          ];
       homebrew = {
         enable = true;
-        # onActivation.cleanup = "uninstall";
-        taps = [ ];
-        brews = [ "python@3.13" ];
-        casks = [ ];
+        onActivation.cleanup = "zap";
+        taps = ["hashicorp/tap" ];
+        brews = ["the_silver_searcher" "envoy" "buf" "fzf" "go" "gradle" "helm" "helmfile" "htop" "jdtls" "k9s" "kubernetes-cli" "python@3.13" "terraform"
+        "neovim" "node" "nvm" "openjdk" "openssl@1.1" "openssl@3" "protobuf" "reattach-to-user-namespace" "terraform" "tmux" "tmuxinator" "tree-sitter" "wget" "xclip"
+        ];
+        casks = ["aethersx2" "aldente" "alt-tab" "anki" "calibre" "coconutbattery" "digikam" "istat-menus" "licecap" "omnidisksweeper" "shottr" "obsidian" ];
       };
     };
   in

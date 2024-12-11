@@ -1,0 +1,27 @@
+==> Formulae
+abseil                          gradle                          libssh2                         mpdecimal                       python@3.9
+argo                            graphite2                       libtermkey                      msgpack                         readline
+aria2                           grpcurl                         libtiff                         ncurses                         reattach-to-user-namespace
+awscli                          harfbuzz                        libunistring                    neovim                          ruby
+beancount                       helm                            libuv                           node                            rust
+brotli                          helmfile                        libx11                          nvm                             six
+buf                             htop                            libxau                          oniguruma                       smartmontools
+c-ares                          icu4c                           libxcb                          openjdk                         sqlite
+ca-certificates                 icu4c@76                        libxdmcp                        openssl@1.1                     terraform
+cairo                           jdtls                           libxext                         openssl@3                       the_silver_searcher
+cffi                            jpeg-turbo                      libxmu                          pcre                            tmux
+docutils                        jq                              libxrender                      pcre2                           tmuxinator
+fontconfig                      k9s                             libxt                           pipx                            tree-sitter
+freetype                        kubernetes-cli                  libyaml                         pixman                          unibilium
+fzf                             libevent                        little-cms2                     pkg-config                      utf8proc
+gdbm                            libice                          luajit-openresty                pnpm                            wget
+gettext                         libidn2                         luv                             protobuf                        xclip
+giflib                          libnghttp2                      lz4                             pycparser                       xorgproto
+glib                            libpng                          lzo                             python@3.10                     xz
+gnu-sed                         libpthread-stubs                maven                           python@3.11                     zstd
+go                              libsm                           minikube                        python@3.13
+
+==> Casks
+aethersx2               android-file-transfer   coconutbattery          istat-menus             obsidian                shottr
+aldente                 anki                    digikam                 licecap                 omnidisksweeper         smcfancontrol
+alt-tab                 calibre                 google-chrome           microsoft-edge          playcover-community
