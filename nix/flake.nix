@@ -38,6 +38,13 @@
            # Add additional package names here
            "obsidian"
          ];
+      homebrew = {
+        enable = true;
+        # onActivation.cleanup = "uninstall";
+        taps = [ ];
+        brews = [ "python@3.13" ];
+        casks = [ ];
+      };
     };
   in
   {
