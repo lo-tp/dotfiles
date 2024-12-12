@@ -15,6 +15,7 @@
       environment.systemPackages =
         [ pkgs.vim
           pkgs.postgresql_17
+          pkgs.fzf
         ];
 
       # Necessary for using flakes on this system.
@@ -41,7 +42,7 @@
         enable = true;
         onActivation.cleanup = "zap";
         taps = ["hashicorp/tap" ];
-        brews = ["the_silver_searcher" "envoy" "buf" "fzf" "go" "gradle" "helm" "helmfile" "htop" "jdtls" "k9s" "kubernetes-cli" "python@3.13" "terraform"
+        brews = ["the_silver_searcher" "envoy" "buf" "go" "gradle" "helm" "helmfile" "htop" "jdtls" "k9s" "kubernetes-cli" "python@3.13" "terraform"
         "neovim" "node" "nvm" "openjdk" "openssl@1.1" "openssl@3" "protobuf" "reattach-to-user-namespace" "terraform" "tmux" "tmuxinator" "tree-sitter" "wget" "xclip"
         ];
         casks = ["aethersx2" "aldente" "alt-tab" "anki" "calibre" "coconutbattery" "digikam" "istat-menus" "licecap" "omnidisksweeper" "shottr" "obsidian" ];
