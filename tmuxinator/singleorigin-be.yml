@@ -26,19 +26,15 @@ windows:
         - runner:
           - cd dev
           - docker-compose help
-  - API Editor:
-    - export VIM_SESSION=$SESSION_HOME/api.vim
-  - Meta-Integration Editor:
-    - cd metadata-integrations
-    - export VIM_SESSION=$SESSION_HOME/meta-integration.vim
-
-  - Connector Editor:
-    - cd connectors
-    - export VIM_SESSION=$SESSION_HOME/connectors.vim
-
-  - Auth Editor:
-    - cd auth
-    - export VIM_SESSION=$SESSION_HOME/api-auth.vim
+  - db:
+      layout: main-vertical
+      panes:
+        - cmd 1:
+          - cd ..
+          - $(readlink -f $(which postgres)) -D db
+        - cmd 2:
+          - cd ..
+          - echo '$(readlink -f $(which pg_ctl)) -D db stop'
   - DB Playground:
       layout: main-vertical
       panes:
@@ -48,3 +44,5 @@ windows:
         - edit:
           - cd ../guide
           - vim sqlCommand
+  - API Editor:
+    - export VIM_SESSION=$SESSION_HOME/api.vim

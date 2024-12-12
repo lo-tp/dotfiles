@@ -16,4 +16,11 @@ windows:
   - dotEditor:
     - cd dot
     - vim
+  - nix:
+      layout: main-vertical
+      panes:
+        - editor:
+          - cd nix
+        - cmd:
+          - cd nix
   - cmd:
