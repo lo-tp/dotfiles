@@ -43,7 +43,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fzf_path=`readlink -f $(which fzf)`
+fzf_path=`dirname $fzf_path`
+fzf_path=`dirname $fzf_path`
+source "$fzf_path/share/fzf/completion.zsh"
+source "$fzf_path/share/fzf/key-bindings.zsh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
