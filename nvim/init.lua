@@ -161,6 +161,5 @@ configNerdTree()
 setReactTypeScriptFileType()
 configVista()
 
-
 require('plugin')
 require('keymapping')

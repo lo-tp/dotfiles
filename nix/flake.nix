@@ -16,6 +16,7 @@
         [ pkgs.vim
           pkgs.postgresql_17
           pkgs.fzf
+          pkgs.pyright
         ];
 
       # Necessary for using flakes on this system.
