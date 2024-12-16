@@ -1,0 +1,40 @@
+# ~/.tmuxinator/qj.yml
+
+name: lhb-trade
+root: ~/Desktop/personal/project
+pre_window:
+
+windows:
+  - be editor:
+    - cd python/lhb-trade
+    - source ./env/bin/activate
+    - export VIM_SESSION=~/.config/nvim/session/lhb-trade.vim
+    - vim -S $VIM_SESSION
+  - be cmd:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd python/lhb-trade
+          - source ./env/bin/activate
+          - git status
+        - db:
+          - cd python/lhb-trade
+          - $(readlink -f $(which postgres)) -D db
+          - echo '$(readlink -f $(which postgres)) -D db'
+        - be server:
+          - cd python/lhb-trade
+          - source ./env/bin/activate
+          - python3 -m fastapi dev src/server/main.py --port 3002
+  - fe editor:
+    - cd javascript/lfb-trade-fe
+    - export VIM_SESSION=~/.config/nvim/session/lhb-trade-fe.vim
+    - vim -S $VIM_SESSION
+  - fe cmd:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - cd javascript/lfb-trade-fe
+          - git status
+        - dev server:
+          - cd javascript/lfb-trade-fe
+          - npm run dev
