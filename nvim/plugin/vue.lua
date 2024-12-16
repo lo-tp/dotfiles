@@ -31,6 +31,17 @@ nvim_lsp.volar.setup {
   on_attach = function(client)
     on_attach(client)
   end,
-  filetypes = {"vue"}
+  filetypes = {"vue"},
+      cmd = { 'node_modules/.bin/vue-language-server', '--stdio' },
+      filetypes = { "vue" },
+      root_dir = nvim_lsp.util.root_pattern("package.json", ".git"),
+      init_options = {
+          vue = {
+            hybridMode = false,
+          },
+          typescript = {
+            -- replace with your global TypeScript library path
+            tsdk = 'node_modules/typescript/lib'
+          }
+        },
 }
-
