@@ -44,7 +44,7 @@
         onActivation.cleanup = "zap";
         taps = ["hashicorp/tap" ];
         brews = ["the_silver_searcher" "envoy" "buf" "go" "gradle" "helm" "helmfile" "htop" "jdtls" "k9s" "kubernetes-cli" "python@3.13" "terraform"
-        "neovim" "node" "nvm" "openjdk" "openssl@1.1" "openssl@3" "protobuf" "reattach-to-user-namespace" "terraform" "tmux" "tmuxinator" "tree-sitter" "wget" "xclip" "pipx"
+        "neovim" "node" "nvm" "openjdk" "openssl@1.1" "openssl@3" "protobuf" "reattach-to-user-namespace" "terraform" "tmux" "tmuxinator" "tree-sitter" "wget" "xclip" "pipx" "awscli"
         ];
         casks = ["aethersx2" "aldente" "alt-tab" "anki" "calibre" "coconutbattery" "digikam" "istat-menus" "licecap" "omnidisksweeper" "shottr" "obsidian" ];
       };
