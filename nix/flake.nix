@@ -43,7 +43,7 @@
         enable = true;
         onActivation.cleanup = "zap";
         taps = ["hashicorp/tap" ];
-        brews = ["the_silver_searcher" "ffmpeg" "envoy" "buf" "go" "gradle" "helm" "helmfile" "htop" "jdtls" "k9s" "kubernetes-cli" "python@3.13" "terraform" "smartmontools" "ollama"  "yt-dlp"
+        brews = ["the_silver_searcher" "whisper-cpp" "ffmpeg" "envoy" "buf" "go" "gradle" "helm" "helmfile" "htop" "jdtls" "k9s" "kubernetes-cli" "python@3.13" "terraform" "smartmontools" "ollama"  "yt-dlp"
         "neovim" "node" "nvm" "openjdk" "openssl@1.1" "openssl@3" "protobuf" "reattach-to-user-namespace" "terraform" "tmux" "tmuxinator" "tree-sitter" "wget" "xclip" "pipx" "awscli"
         ];
         casks = ["visual-studio-code" "aethersx2" "aldente" "alt-tab" "anki" "calibre" "coconutbattery" "digikam" "istat-menus" "licecap" "omnidisksweeper" "shottr" "obsidian" ];
