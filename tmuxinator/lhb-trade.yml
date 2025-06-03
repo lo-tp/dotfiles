@@ -24,7 +24,10 @@ windows:
         - be server:
           - cd python/lhb-trade
           - source ./env/bin/activate
-          - python3 -m fastapi dev src/server/main.py --port 3002
+          - python3 -m fastapi dev src/main.py --port 3002
+  - be aider:
+    - cd python/lhb-trade
+    - echo 'aider --model ollama_chat/qwen2.5-coder:14b --read convention.md --show-diffs --no-auto-commit --chat-mode code --vim .'
   - fe editor:
     - cd javascript/lfb-trade-fe
     - export VIM_SESSION=~/.config/nvim/session/lhb-trade-fe.vim
@@ -38,3 +41,6 @@ windows:
         - dev server:
           - cd javascript/lfb-trade-fe
           - npm run dev
+  - fe aider:
+    - cd javascript/lfb-trade-fe
+    - echo 'aider --model ollama_chat/qwen2.5-coder:14b --read convention.md --show-diffs --no-auto-commit --chat-mode code --vim .'
