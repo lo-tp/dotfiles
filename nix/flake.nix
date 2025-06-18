@@ -97,6 +97,7 @@
           "awscli"
           "telnet"
           "aider"
+          "ta-lib"
         ];
         casks = [
           "dbeaver-community"
