@@ -98,6 +98,7 @@
           "telnet"
           "aider"
           "ta-lib"
+          "podman"
         ];
         casks = [
           "dbeaver-community"
