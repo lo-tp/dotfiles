@@ -16,6 +16,7 @@ windows:
         - cmd:
           - cd python/lhb-trade
           - source ./env/bin/activate
+          - export PYTHONPATH=$PYTHONPATH:$(pwd)
           - git status
         - db:
           - cd python/lhb-trade
@@ -24,6 +25,7 @@ windows:
         - be server:
           - cd python/lhb-trade
           - source ./env/bin/activate
+          - export PYTHONPATH=$PYTHONPATH:$(pwd)
           - python3 -m fastapi dev src/main.py --port 3002
   - be aider:
     - cd python/lhb-trade
@@ -44,3 +46,7 @@ windows:
   - fe aider:
     - cd javascript/lfb-trade-fe
     - echo 'aider --model ollama_chat/qwen2.5-coder:14b --read convention.md --show-diffs --no-auto-commit --chat-mode code --vim .'
+  - script runner:
+    - cd python/lhb-trade
+    - source ./env/bin/activate
+    - export PYTHONPATH=$PYTHONPATH:$(pwd)
