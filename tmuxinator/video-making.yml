@@ -1,0 +1,14 @@
+name: video-making
+root: ~/Desktop/personal/videos
+
+windows:
+  - Kokoro TTS: 
+    - cd ../project/python/Kokoro-TTS-Local
+    - source venv/bin/activate
+    - echo 'visit http://localhost:7860'
+    - python3.11 gradio_interface.py
+  - BBDown:
+    - echo './BBDown -tv https://www.bilibili.com/video/BV19Ur3YPEi5/\?spm_id_from\=333.1387.collection.video_card.click\&vd_source\=83c1c03a323974c2109616b8b52b79a5 -ia'
+  - Extract Text:
+    - echo 'ffmpeg -i test.mp4  -ar 16000 /tmp/test.wav'
+    - echo 'whisper-cpp -otxt -of test.txt -m ggml-large-v3.bin -f test.wav -l auto'

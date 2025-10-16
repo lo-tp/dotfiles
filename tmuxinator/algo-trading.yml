@@ -1,0 +1,19 @@
+# ~/.tmuxinator/qj.yml
+
+name: algo-trading
+root: ~/Desktop/personal/project
+pre_window:
+  - cd python/algo-trading
+  - source ./env/bin/activate
+
+windows:
+  - be editor:
+    - export VIM_SESSION=~/.config/nvim/session/algo-trading.vim
+    - vim -S $VIM_SESSION
+  - be cmd:
+      layout: main-vertical
+      panes:
+        - cmd 1:
+          - git status
+        - cmd 2:
+          - ls

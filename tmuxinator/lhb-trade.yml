@@ -7,6 +7,7 @@ pre_window:
 windows:
   - be editor:
     - cd python/lhb-trade
+    - export PYTHONPATH=$PYTHONPATH:./src
     - source ./env/bin/activate
     - export VIM_SESSION=~/.config/nvim/session/lhb-trade.vim
     - vim -S $VIM_SESSION
@@ -15,8 +16,8 @@ windows:
       panes:
         - cmd:
           - cd python/lhb-trade
+          - export PYTHONPATH=$PYTHONPATH:./src
           - source ./env/bin/activate
-          - export PYTHONPATH=$PYTHONPATH:$(pwd)
           - git status
         - db:
           - cd python/lhb-trade
@@ -24,11 +25,12 @@ windows:
           - echo '$(readlink -f $(which postgres)) -D db'
         - be server:
           - cd python/lhb-trade
+          - export PYTHONPATH=$PYTHONPATH:./src
           - source ./env/bin/activate
-          - export PYTHONPATH=$PYTHONPATH:$(pwd)
           - python3 -m fastapi dev src/main.py --port 3002
   - be aider:
     - cd python/lhb-trade
+    - export PYTHONPATH=$PYTHONPATH:./src
     - echo 'aider --model ollama_chat/qwen2.5-coder:14b --read convention.md --show-diffs --no-auto-commit --chat-mode code --vim .'
   - fe editor:
     - cd javascript/lfb-trade-fe
@@ -49,4 +51,4 @@ windows:
   - script runner:
     - cd python/lhb-trade
     - source ./env/bin/activate
-    - export PYTHONPATH=$PYTHONPATH:$(pwd)
+    - export PYTHONPATH=$PYTHONPATH:./src

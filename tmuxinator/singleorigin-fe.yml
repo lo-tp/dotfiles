@@ -4,14 +4,14 @@ pre_window:
   - export SESSION_HOME="~/.config/nvim/session/single-origin"
   - export MFA_STS_DURATION=129600
   - export KUBECONFIG=~/.kube/config-aws
-  - nvm use v16.17.0
+  - nvm use lts/jod
 
 windows:
-  - Web Editor:
+  - FE Editor:
     - cd singleorigin-web
     - export VIM_SESSION=$SESSION_HOME/web.vim
     - vim -S $VIM_SESSION
-  - Web CMD:
+  - FE CMD:
       layout: main-vertical
       panes:
         - cmd:
@@ -22,26 +22,16 @@ windows:
           - echo 'kubectl port-forward -n staging svc/kona-staging-core 21002:8080 21003:9090'
         - server:
           - cd singleorigin-web
-          - pnpm dev
-  - Lineage Editor:
-    - cd singleorigin-web
-    - export VIM_SESSION=$SESSION_HOME/web-lineage.vim
+  - New FE Editor:
+    - cd fe-revamp
+    - export VIM_SESSION=$SESSION_HOME/web-revamp.vim
+    - vim -S $VIM_SESSION
 
-  - E2e Editor:
-    - cd singleorigin-web
-    - export VIM_SESSION=$SESSION_HOME/e2e.vim
-  - Public Editor:
-    - cd singleorigin-public
-    - export VIM_SESSION=$SESSION_HOME/public.vim
-  - Public CMD:
+  - New FE CMD:
       layout: main-vertical
       panes:
         - cmd:
-          - cd singleorigin-public
+          - cd fe-revamp
           - git status
-        - runner:
-          - cd singleorigin-public
-          - pnpm dev -- -p 21001
-  - Storybook Editor:
-    - cd singleorigin-web/stories
-    - export VIM_SESSION=$SESSION_HOME/webStories.vim
+        - server:
+          - cd fe-revamp
