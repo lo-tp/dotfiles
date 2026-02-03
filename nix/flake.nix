@@ -101,6 +101,7 @@
           "gemini-cli"
           "libomp"
           "gettext"
+          "v2ray"
         ];
         casks = [
           "dbeaver-community"
