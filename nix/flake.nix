@@ -77,7 +77,6 @@
           "terraform"
           "smartmontools"
           "ollama"
-          "yt-dlp"
           "iperf3"
           "neovim"
           "node"
@@ -99,6 +98,9 @@
           "aider"
           "ta-lib"
           "podman"
+          "gemini-cli"
+          "libomp"
+          "gettext"
         ];
         casks = [
           "dbeaver-community"
