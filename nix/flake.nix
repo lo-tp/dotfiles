@@ -102,6 +102,7 @@
           "libomp"
           "gettext"
           "v2ray"
+          "uv"
         ];
         casks = [
           "dbeaver-community"
