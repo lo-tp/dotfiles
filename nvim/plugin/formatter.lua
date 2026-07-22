@@ -49,15 +49,29 @@ require("formatter").setup(
         htmlFormat
       },
       python = {
-      function()
-        return {
-          exe = "black",
-          args = {
-            "-q -",
-          },
-          stdin = true
-        }
-      end
+        function()
+          -- Default to global black
+          local exe = "black"
+          
+          -- Check for local virtual environment in current working directory
+          local venv_path = vim.fn.getcwd() .. "/.venv/bin/black"
+          local alt_venv_path = vim.fn.getcwd() .. "/venv/bin/black"
+          
+          if vim.fn.executable(venv_path) == 1 then
+            exe = venv_path
+          elseif vim.fn.executable(alt_venv_path) == 1 then
+            exe = alt_venv_path
+          end
+
+          return {
+            exe = exe,
+            args = {
+              "-q", 
+              "-",
+            },
+            stdin = true
+          }
+        end
       },
     }
   }
