@@ -120,6 +120,8 @@
           "omnidisksweeper"
           "shottr"
           "obsidian"
+          "antigravity-cli"
+          "handy"
         ];
       };
 
