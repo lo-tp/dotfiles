@@ -79,7 +79,6 @@
           "ollama"
           "iperf3"
           "neovim"
-          "node"
           "nvm"
           "openjdk"
           "openssl@1.1"
@@ -103,6 +102,11 @@
           "gettext"
           "v2ray"
           "uv"
+          "portaudio"
+          "opus"
+          "ripgrep"
+          "block-goose-cli"
+          "watchexec"
         ];
         casks = [
           "dbeaver-community"
