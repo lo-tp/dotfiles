@@ -107,6 +107,7 @@
           "ripgrep"
           "block-goose-cli"
           "watchexec"
+          "pi-coding-agent"
         ];
         casks = [
           "dbeaver-community"
