@@ -108,6 +108,8 @@
           "block-goose-cli"
           "watchexec"
           "pi-coding-agent"
+          "llmfit"
+          "fd"
         ];
         casks = [
           "dbeaver-community"
