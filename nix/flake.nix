@@ -110,6 +110,8 @@
           "pi-coding-agent"
           "llmfit"
           "fd"
+          "gh"
+          "autossh"
         ];
         casks = [
           "dbeaver-community"
@@ -129,6 +131,7 @@
           "obsidian"
           "antigravity-cli"
           "handy"
+          "iterm2"
         ];
       };
 
