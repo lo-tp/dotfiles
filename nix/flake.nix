@@ -76,7 +76,6 @@
           "python@3.13"
           "terraform"
           "smartmontools"
-          "ollama"
           "iperf3"
           "neovim"
           "nvm"
@@ -132,6 +131,9 @@
           "antigravity-cli"
           "handy"
           "iterm2"
+          "font-intel-one-mono"
+          "lm-studio"
+          "nimble-commander"
         ];
       };
 
