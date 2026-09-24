@@ -30,6 +30,7 @@ export NVM_DIR=$XDG_CONFIG_HOME/nvm
 
 alias tmux='TERM=xterm-256color tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 alias vim="nvim"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 
 # for flutter
@@ -70,3 +71,8 @@ export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
 
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/lotp/.lmstudio/bin"
+# End of LM Studio CLI section
+
