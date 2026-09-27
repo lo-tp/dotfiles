@@ -111,6 +111,7 @@
           "fd"
           "gh"
           "autossh"
+          "hugo"
         ];
         casks = [
           "dbeaver-community"
