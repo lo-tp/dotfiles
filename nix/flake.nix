@@ -58,6 +58,7 @@
         taps = [
           "homebrew/bundle"
           "hashicorp/tap"
+          "lzhgus/tap"
         ];
         brews = [
           "the_silver_searcher"
@@ -112,6 +113,9 @@
           "gh"
           "autossh"
           "hugo"
+          "llama.cpp"
+          "glow"
+          "playwright-cli"
         ];
         casks = [
           "dbeaver-community"
@@ -127,7 +131,6 @@
           "istat-menus"
           "licecap"
           "omnidisksweeper"
-          "shottr"
           "obsidian"
           "antigravity-cli"
           "handy"
@@ -135,6 +138,7 @@
           "font-intel-one-mono"
           "lm-studio"
           "nimble-commander"
+          "capso"
         ];
       };
 
