@@ -10,6 +10,11 @@ reload_config = "prefix+r"
 # bind c new-window  (already the Herdr default)
 new_tab = "prefix+c"
 
+# Detach = leave the session running in the background server; `herdr` re-attaches.
+# Default is prefix+q, which is too easy to hit by accident. Moved to prefix+d
+# (prefix+shift+d is still close_workspace, so this doesn't collide).
+detach = "prefix+d"
+
 # Splits — `|` for horizontal (left/right) and `-` for vertical (top/bottom),
 # matching the tmux habit. The literal "|" and "-" characters are both accepted
 # by Herdr (only the named "pipe" form is rejected).
@@ -25,8 +30,16 @@ resize_pane_up     = "prefix+alt+k"
 resize_pane_left   = "prefix+alt+h"
 resize_pane_right  = "prefix+alt+l"
 
-# bind J copy-mode
-edit_scrollback = "prefix+j"
+# tmux `prefix [` -> copy mode. Herdr ships this unbound, so bind it here.
+# (tmux `prefix J` was your edit-scrollback habit; Herdr's default is prefix+e.)
+copy_mode       = "prefix+J"
+edit_scrollback = "prefix+e"
+
+[[keys.command]]
+key = "prefix+t"
+type = "plugin_action"
+command = "herdr-navigator.open"
+description = "jump to anything"
 
 [ui]
 # your existing settings
@@ -37,6 +50,12 @@ sidebar_collapsed_mode = "hidden"
 mouse_capture = true
 # replaces tmux-yank + your xclip / paste bindings (native clipboard)
 copy_on_select = true
+
+# Sidebar space rows. Default is [["state_icon", "workspace"], ["branch", "git_status"]];
+# the second row is the "main ↑1" git line, so dropping it hides branch + ahead/behind.
+# To keep the branch name but hide only the ↑1 marker, use [["state_icon","workspace"],["branch"]].
+[ui.sidebar.spaces]
+rows = [["state_icon", "workspace"]]
 
 [terminal]
 # set -g default-shell "$SHELL"  (empty => $SHELL)
