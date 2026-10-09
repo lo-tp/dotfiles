@@ -53,7 +53,6 @@
 
       homebrew = {
         enable = true;
-        onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
         taps = [
           "homebrew/bundle"
@@ -116,6 +115,8 @@
           "llama.cpp"
           "glow"
           "playwright-cli"
+          "herdr"
+          "rust"
         ];
         casks = [
           "dbeaver-community"
