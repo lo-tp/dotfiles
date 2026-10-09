@@ -1,0 +1,59 @@
+onboarding = false
+
+[keys]
+# set -g prefix C-n
+prefix = "ctrl+n"
+
+# bind r source-file ... Reloaded!
+reload_config = "prefix+r"
+
+# bind c new-window  (already the Herdr default)
+new_tab = "prefix+c"
+
+# Splits — `|` for horizontal (left/right) and `-` for vertical (top/bottom),
+# matching the tmux habit. The literal "|" and "-" characters are both accepted
+# by Herdr (only the named "pipe" form is rejected).
+split_horizontal = "prefix+-"       # left/right (tmux `|`)
+split_vertical   = "prefix+|"       # top/bottom (tmux `-`)
+
+# FOCUS — tmux used j/k/h/l for resize-pane; in Herdr these focus the
+# neighbor pane (usually what you actually want). Defaults:
+# focus_pane_down/up/left/right = prefix+j/k/h/l
+# If you want tmux-style resize-by-1, add:
+resize_pane_down   = "prefix+alt+j"
+resize_pane_up     = "prefix+alt+k"
+resize_pane_left   = "prefix+alt+h"
+resize_pane_right  = "prefix+alt+l"
+
+# bind J copy-mode
+edit_scrollback = "prefix+j"
+
+[ui]
+# your existing settings
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden"
+
+# set -g mouse on
+mouse_capture = true
+# replaces tmux-yank + your xclip / paste bindings (native clipboard)
+copy_on_select = true
+
+[terminal]
+# set -g default-shell "$SHELL"  (empty => $SHELL)
+default_shell = ""
+
+[theme]
+# pick a base theme closest to your tmux palette, then override tokens
+name = "kanagawa-lotus"
+# [theme.custom]
+# accent = "#89b4fa"
+
+# Status entries — replaces your tmux status-right (date/battery/CPU/git).
+# Verify the exact inline-table syntax with `herdr --skill` before relying on it.
+# tab_bar_right = [
+#   { type = "datetime" },
+#   { type = "command", command = "..." },  # battery
+#   { type = "command", command = "..." },  # cpu
+#   { type = "command", command = "..." },  # git
+# ]
+auto_switch = false

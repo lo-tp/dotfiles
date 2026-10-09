@@ -1,0 +1,10 @@
+# Herdr runtime / ephemeral state — track only config.toml
+*.log
+herdr-client.sock
+herdr.sock
+herdr.sock.agent
+.plugins.lock
+session.json
+sessions/
+session-snapshots/
+config.toml.bak
