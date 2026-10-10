@@ -47,10 +47,10 @@ goto = "prefix+q"
 last_pane = "prefix+g"
 
 [[keys.command]]
-key = "prefix+t"
+key = "prefix+L"
 type = "plugin_action"
-command = "herdr-navigator.open"
-description = "jump to anything"
+command = "herdr-last.toggle-workspace"
+description = "Toggle to last workspace"
 
 [experimental]
 kitty_graphics = true

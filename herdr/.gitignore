@@ -8,3 +8,7 @@ session.json
 sessions/
 session-snapshots/
 config.toml.bak
+
+# Installed plugins are cloned/compiled by herdr; only plugins/config/* is ours
+plugins/github/
+plugins/.tmp-install-*/

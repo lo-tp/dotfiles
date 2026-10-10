@@ -1,12 +1,12 @@
 [
   {
-    "plugin_id": "herdr-navigator",
-    "name": "Herdr Navigator",
-    "version": "0.3.3",
-    "min_herdr_version": "0.7.3",
-    "description": "Jump to any Herdr workspace, agent, project, session, remote, directory, or action from one fuzzy navigator.",
-    "manifest_path": "/Users/lotp/.config/herdr/plugins/github/herdr-navigator-3a5a6fa5dfb5/herdr-plugin.toml",
-    "plugin_root": "/Users/lotp/.config/herdr/plugins/github/herdr-navigator-3a5a6fa5dfb5",
+    "plugin_id": "herdr-last",
+    "name": "herdr-last",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Plugin to toggle back to the previously active tab or workspace in Herdr",
+    "manifest_path": "/Users/lotp/.config/herdr/plugins/github/herdr-last-f12265159349/herdr-plugin.toml",
+    "plugin_root": "/Users/lotp/.config/herdr/plugins/github/herdr-last-f12265159349",
     "enabled": true,
     "platforms": [
       "linux",
@@ -14,80 +14,59 @@
     ],
     "build": [
       {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
         "command": [
-          "cargo",
-          "build",
-          "--release"
+          "bash",
+          "scripts/install.sh"
         ]
       }
     ],
     "actions": [
       {
-        "id": "jump-back",
-        "title": "Herdr Navigator: jump back",
-        "contexts": [
-          "workspace",
-          "global"
-        ],
+        "id": "toggle-tab",
+        "title": "Toggle Last Tab",
         "command": [
-          "./target/release/herdr-navigator",
-          "jump-back"
+          "./bin/herdr-last",
+          "toggle-tab"
         ]
       },
       {
-        "id": "open",
-        "title": "Herdr Navigator: open",
-        "contexts": [
-          "workspace",
-          "global"
-        ],
+        "id": "toggle-workspace",
+        "title": "Toggle Last Workspace",
         "command": [
-          "./target/release/herdr-navigator",
-          "open"
-        ]
-      },
-      {
-        "id": "open-side",
-        "title": "Herdr Navigator: side pane",
-        "contexts": [
-          "workspace",
-          "global"
-        ],
-        "command": [
-          "./target/release/herdr-navigator",
-          "open-side"
+          "./bin/herdr-last",
+          "toggle-workspace"
         ]
       }
     ],
-    "panes": [
+    "events": [
       {
-        "id": "picker",
-        "title": "Herdr Navigator",
-        "placement": "overlay",
+        "on": "tab.focused",
         "command": [
-          "./target/release/herdr-navigator",
-          "ui"
+          "./bin/herdr-last",
+          "event",
+          "tab.focused"
         ]
       },
       {
-        "id": "picker-side",
-        "title": "Navigator Side",
-        "placement": "split",
+        "on": "workspace.focused",
         "command": [
-          "./target/release/herdr-navigator",
-          "ui",
-          "--side"
+          "./bin/herdr-last",
+          "event",
+          "workspace.focused"
         ]
       }
     ],
     "source": {
       "kind": "github",
-      "owner": "thanhdat77",
-      "repo": "herdr-navigator",
-      "requested_ref": "v0.3.3",
-      "resolved_commit": "03b803a00341d58382b6cda70a7cd618af5b8806",
-      "managed_path": "/Users/lotp/.config/herdr/plugins/github/herdr-navigator-3a5a6fa5dfb5",
-      "installed_unix_ms": 1791540255706
+      "owner": "lmilojevicc",
+      "repo": "herdr-last",
+      "resolved_commit": "444c12f51fa8f712588cd1481dcd5459f658eac9",
+      "managed_path": "/Users/lotp/.config/herdr/plugins/github/herdr-last-f12265159349",
+      "installed_unix_ms": 1791554412840
     }
   }
 ]
