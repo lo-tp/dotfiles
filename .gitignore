@@ -13,3 +13,26 @@ karabiner/automatic_backups/
 nvim/session/
 nvim/.netrwhist
 nvim/UltiSnips/kotlin.snippets
+
+# Local-only tool state, caches and app data (untracked as of 2026-02-09)
+.pnpm-debug.log
+/pi/
+/.pi/
+/browser-harness/
+/clash/
+/containers/
+/gcloud/
+/gcp/
+/gh/
+/glow/
+/helm/
+/homebrew/
+/htop/
+/iterm2/
+/java/
+/pip/
+/ppsspp/
+/Ryujinx/
+
+# Local-only config backups/variants
+herdr/config.toml.pre-goto-fix
