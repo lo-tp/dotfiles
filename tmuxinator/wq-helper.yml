@@ -1,0 +1,17 @@
+# ~/.tmuxinator/qj.yml
+
+name: wq-helper
+root: ~/Desktop/personal/project/javascript/wq-helper
+pre_window:
+  - nvm use 22
+
+windows:
+  - Editor:
+    - export VIM_SESSION=~/.config/nvim/session/wq-helper.vim
+    - vim -S $VIM_SESSION
+
+  - Cmd:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - git status

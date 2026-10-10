@@ -1,9 +1,8 @@
 # ~/.tmuxinator/qj.yml
 
 name: algo-trading
-root: ~/Desktop/personal/project
+root: ~/Desktop/personal/project/python/algo-trading
 pre_window:
-  - cd python/algo-trading
   - source ./env/bin/activate
 
 windows:
@@ -17,3 +16,17 @@ windows:
           - git status
         - cmd 2:
           - ls
+  - binance editor:
+    - export VIM_SESSION=~/.config/nvim/session/algo-trade-binance.vim
+    - vim -S $VIM_SESSION
+  - be gemini:
+    - echo 'gemini'
+  - postgres:
+      layout: main-vertical
+      panes:
+        - cmd 1:
+          - export $(grep -v '^#' .env | xargs)
+          - psql $DB_URL
+
+        - cmd 2:
+          - $(readlink -f $(which postgres)) -D db -p 7860

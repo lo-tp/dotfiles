@@ -168,6 +168,17 @@
 
             # Automatically migrate existing Homebrew installations
             autoMigrate = true;
+
+            # Trust the non-official taps used by the brews/casks above. Homebrew
+            # 4.x+ (definitely 7.x) refuses to load formulae/casks from untrusted
+            # taps; this runs `brew trust --tap ...` during activation, before
+            # `brew bundle`.
+            trust = {
+              taps = [
+                "hashicorp/tap"
+                "lzhgus/tap"
+              ];
+            };
           };
         }
       ];

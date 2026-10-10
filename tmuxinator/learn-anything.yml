@@ -1,0 +1,60 @@
+name: Learn Anthing
+root: ~/Desktop/Personal/project/javascript/learn-anything
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session/learn-anything"
+
+windows:
+  - FE:
+      layout: even-horizontal
+      panes:
+        - pi:
+          - pi
+        - vim:
+          - export VIM_SESSION=$SESSION_HOME/fe.vim
+          - vim -S $VIM_SESSION
+  - FE CMD:
+      layout: main-vertical
+      panes:
+        - cmd:
+          - git status
+        - db:
+          - podman compose up
+        - dev server:
+          - npm run dev
+
+  - Sandbox:
+      root: ~/Desktop/Personal/project/javascript/learn-anything-sandbox
+      layout: even-horizontal
+      panes:
+        - pi:
+          - pi
+        - vim:
+          - export VIM_SESSION=$SESSION_HOME/sandbox.vim
+          - vim -S $VIM_SESSION
+  - Sandbox CMD:
+      layout: main-vertical
+      root: ~/Desktop/Personal/project/javascript/learn-anything-sandbox
+      panes:
+        - cmd:
+          - git status
+        - dev server:
+          - npm run dev -- -p 3001
+
+  - BE:
+      root: ~/Desktop/Personal/project/python/learn-anything-backend
+      layout: even-horizontal
+      panes:
+        - pi:
+          - pi
+        - vim:
+          - export VIM_SESSION=$SESSION_HOME/be.vim
+          - vim -S $VIM_SESSION
+
+  - BE CMD:
+      layout: main-vertical
+      root: ~/Desktop/Personal/project/python/learn-anything-backend
+      panes:
+        - cmd:
+          - git status
+        - dev server:
+          - uv run python main.py --reload

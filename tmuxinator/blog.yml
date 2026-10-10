@@ -3,17 +3,18 @@ root: ~/Desktop/personal/document/blog
 
 windows:
   - content:
-    - cd blog/source
+    # repo root is the working tree: content/posts, layouts/, assets/, hugo.toml
     - vim
   - cmd:
-      layout: main-vertical 
+      layout: main-vertical
       panes:
-          - blog:
-            - cd blog
-            - npm run generate
-            - npm run preview
+          - dev:
+            # AGENTS.md: baseURL is https://blog.lotp.xyz/, so a plain build/preview
+            # serves cross-origin assets (no CSS). Serve with a local override.
+            - hugo server -b http://127.0.0.1:1313 --port 1313 --bind 127.0.0.1
           - public:
-            - cd blog/public
+            # deploy.sh commits and pushes from here; check it before deploying
+            - cd public
             - git status
   - global:
     - git status

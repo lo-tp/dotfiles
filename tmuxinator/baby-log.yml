@@ -1,0 +1,13 @@
+name: baby log
+root: ~/Desktop/Personal/project/javascript/baby-log
+pre_window: 
+  - export SESSION_HOME="~/.config/nvim/session"
+
+windows:
+  - Editor:
+    - export VIM_SESSION=$SESSION_HOME/baby-log.vim
+    - vim -S $VIM_SESSION
+  - CMD:
+      - git status
+  - Gemini:
+    - git status

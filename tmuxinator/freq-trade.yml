@@ -1,0 +1,20 @@
+name: freqtrade
+root: ~/Desktop/personal/project/python/freqtrade
+pre_window:
+  - source ./.venv/bin/activate
+
+windows:
+  - editor:
+    - export VIM_SESSION=~/.config/nvim/session/freqtrade.vim
+    - vim -S $VIM_SESSION
+  - cmd:
+      layout: main-vertical
+      panes:
+        - cmd 1:
+          - git status
+        - cmd 2:
+          - freqtrade list-strategies
+  - v2ray:
+    - cd ../v2ray
+    - python3 tmp.py
+    - v2ray run -c kk.json

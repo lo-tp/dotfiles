@@ -1,0 +1,39 @@
+name: binance-cli
+root: ~/Desktop/personal/project/python/binance
+pre_window:
+  - source ./venv/bin/activate
+
+windows:
+  - editor:
+    - export VIM_SESSION=~/.config/nvim/session/algo-trade-binance.vim
+    - vim -S $VIM_SESSION
+  - cmd:
+    - git status
+  - gemini:
+    - echo 'gemini'
+  - postgres:
+      layout: main-vertical
+      panes:
+        - cmd 1:
+          - export $(grep -v '^#' .env | xargs)
+          - psql postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@localhost:$POSTGRES_PORT/$POSTGRES_DB
+        - cmd 2:
+          - $(readlink -f $(which postgres)) -D postgres -p 7860
+  - web app:
+      layout: main-vertical
+      panes:
+        - cmd 1:
+          - cd webapp/backend
+          - uvicorn main:app --reload
+        - cmd 2:
+          - cd webapp/backend
+          - npm run dev
+  - backtest config:
+      layout: main-vertical
+      panes:
+        - cmd 1:
+          - vim
+        - cmd 2:
+          - cd ../bt-config
+          - git status
+

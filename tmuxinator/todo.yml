@@ -1,0 +1,8 @@
+name: ToDo
+root: ~/Desktop/personal/project/notion-sync
+
+windows:
+  - main:
+    - pi
+  - editor:
+    - vim 
